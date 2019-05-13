@@ -1,7 +1,7 @@
 import React from "react";
 
-import ACTunes from "./ACTunes";
-import Undertale from "./Undertale";
+import ACTunes from "./_actunes/index";
+import Undertale from "./_undertale/index";
 
 const appData = [
   {

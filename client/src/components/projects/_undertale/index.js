@@ -3,12 +3,18 @@ import React, { Component } from "react";
 class Undertale extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      posts: []
+    };
+  }
+
+  componentDidMount() {
+    //
   }
 
   render() {
     return (
-      <div>
+      <div key="Undertale">
         <p>Undertale Contents</p>
       </div>
     );

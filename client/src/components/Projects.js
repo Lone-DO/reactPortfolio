@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import appData from "./projects/appData";
+import Project from "../models/Project";
 
 class Projects extends Component {
   constructor() {
@@ -10,22 +11,21 @@ class Projects extends Component {
     };
   }
 
+  componentDidMount() {
+    //
+  }
+
   render() {
     const Applications = this.state.apps.map(app => {
       return (
-        <section key={app.title}>
-          <h3>{app.name}</h3>
-          <p>{app.headline}</p>
-          <i>{app.description}</i>
-
-          {app.type === "app" ? (
-            app.launch
-          ) : (
-            <a href={app.launch}>
-              <button>Launch App</button>
-            </a>
-          )}
-        </section>
+        <Project
+          key={app.title}
+          name={app.name}
+          headline={app.headline}
+          description={app.description}
+          launch={app.launch}
+          type={app.type}
+        />
       );
     });
 

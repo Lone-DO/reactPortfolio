@@ -3,7 +3,10 @@ import React, { Component } from "react";
 class ACTunes extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      albumns: [],
+      userAlbumns: []
+    };
   }
 
   componentDidMount() {
@@ -12,7 +15,7 @@ class ACTunes extends Component {
 
   render() {
     return (
-      <div>
+      <div key="ACTunes">
         <p>Animal Crossing Radio...</p>
       </div>
     );
