@@ -1,18 +1,23 @@
 import React from "react";
+import { BrowserRouter, Route } from "react-router-dom";
+
 import "../assets/styles/App.css";
 
 import Header from "./Header";
-import Projects from "./Projects";
-import Contact from "./Contact";
+import Landing from "./Landing";
+
 import Footer from "./Footer";
 
 const App = () => {
   return (
     <div className="App">
-      <Header />
-      <Projects />
-      <Contact />
-      <Footer />
+      <BrowserRouter>
+        <div>
+          <Header />
+          <Route path="/" exact component={Landing} />
+          <Footer />
+        </div>
+      </BrowserRouter>
     </div>
   );
 };
