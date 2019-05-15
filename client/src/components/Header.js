@@ -5,7 +5,7 @@ import logo from "../assets/images/titan.gif";
 
 const Header = () => {
   return (
-    <header>
+    <header className="App-header">
       <img src={logo} alt="" />
       <p> Header Contents...</p>
     </header>

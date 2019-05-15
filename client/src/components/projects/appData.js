@@ -1,29 +1,24 @@
-import React from "react";
-
-import ACTunes from "./_actunes/index";
-import Undertale from "./_undertale/index";
-
 const appData = [
   {
     id: 1,
     type: "app",
-    title: "Undertale-App",
+    title: "UndertaleApp",
     name: "Undertale",
     headline: "First project, built using Ember.js",
     description:
       "Recreational Project that restructures the original Site to a more update formality. Built using Ember, my first project I've built as a Developer. Complete overhaul of hands-on coding and features that utilize API information for the user's discretion. Allows fans to post 'Mail' on the site for the Undertale Devs to see, and others to respond to. Built with Ember.js, Backend localStorage.",
-    launch: [<Undertale />],
+    launch: "/undertale",
     modules: ["SASS", "jQuery", "ES2015", "Ember.js", "localStorage"]
   },
   {
     id: 2,
     type: "app",
-    title: "ACTunes-App",
+    title: "ACTunesApp",
     name: "Animal Crossing Tunes",
     headline: "Second Project, built using EmberCLI & MongoDB",
     description:
       "Creative application that brings the daily soundtracks of Animal Crossing back, and now it's here to stay for our daily endeavors unlike never before. Able to choose smoothly between the user's desired Generation, from the hit classics like, original Animal Crossing from GameCube, to City Folk from the WII U, and the latest New Leaf on the 3DS. Built with the MEEN stack, backend API through Mongodb.",
-    launch: [<ACTunes />],
+    launch: "/actunes",
     modules: [
       "SASS",
       "Mongo",
@@ -37,7 +32,7 @@ const appData = [
   {
     id: 3,
     type: ".url",
-    title: "Airline-App",
+    title: "AirlineApp",
     name: "Airline",
     headline: "Course Project, Built while learning ES6",
     description: "",
@@ -47,7 +42,7 @@ const appData = [
   {
     id: 4,
     type: ".url",
-    title: "Emaily-App",
+    title: "EmailyApp",
     name: "Emaily",
     headline: "Course Project, Built while learning Node & React",
     description: "",

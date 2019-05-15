@@ -20,6 +20,7 @@ class Projects extends Component {
       return (
         <Project
           key={app.title}
+          title={app.title}
           name={app.name}
           headline={app.headline}
           description={app.description}
@@ -30,8 +31,8 @@ class Projects extends Component {
     });
 
     return (
-      <div>
-        <h2>List of personal applications</h2>
+      <div className="App-projects">
+        <p>List of personal applications</p>
         {Applications}
       </div>
     );
