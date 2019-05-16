@@ -1,38 +1,84 @@
 import React, { Component } from "react";
 
+import Info from "./_info";
+import AlbumList from "./albums/_albumList";
+
 class Footer extends Component {
   constructor() {
     super();
     this.state = {
-      genShowing: false,
-      hintShowing: false
+      listShowing: false,
+      infoShowing: false,
+      display: []
     };
 
-    this.toggleGen = this.toggleGen.bind(this);
+    this.toggleDisplay = this.toggleDisplay.bind(this);
   }
 
-  toggleGen() {
+  toggleDisplay(item, content = []) {
     this.setState(prevState => {
-      return { genShowing: !prevState.genShowing };
+      switch (item) {
+        case "listShowing":
+          return {
+            listShowing: !prevState.listShowing,
+            infoShowing: false,
+            display: content
+          };
+        case "infoShowing":
+          return {
+            infoShowing: !prevState.infoShowing,
+            listShowing: false,
+            display: content
+          };
+        default:
+          return;
+      }
     });
   }
 
   render() {
+    const listBtn = this.state.listShowing ? (
+      <button
+        key="listHide"
+        onClick={() => this.toggleDisplay("listShowing")}
+        className="btn cancel-button"
+      >
+        ^
+      </button>
+    ) : (
+      <button
+        key="listShow"
+        className="btn"
+        onClick={() => this.toggleDisplay("listShowing", <AlbumList />)}
+      >
+        Generations
+      </button>
+    );
+
+    const infoBtn = this.state.infoShowing ? (
+      <button
+        key="infoHide"
+        onClick={() => this.toggleDisplay("infoShowing")}
+        className="btn cancel-button"
+      >
+        ^
+      </button>
+    ) : (
+      <button
+        key="infoShow"
+        className="btn"
+        onClick={() => this.toggleDisplay("infoShowing", <Info />)}
+      >
+        Info
+      </button>
+    );
+
     return (
       <footer>
         <div id="time" />
-        {this.state.genShowing ? (
-          <div>
-            <button disabled>Generations</button>
-            <button onClick={this.toggleGen} className="btn cancel-button">
-              X
-            </button>
-          </div>
-        ) : (
-          <div>
-            <button onClick={this.toggleGen}>Generations</button>
-          </div>
-        )}
+        {listBtn}
+        {infoBtn}
+        {this.state.display}
       </footer>
     );
   }

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Guide = () => {
+const Info = () => {
   let wallpaperURL = "http://www.pixelstalk.net/animal-crossing-wallpapers-hd/",
     originalOST = "https://www.youtube.com/playlist?list=PL719681019F01F212",
     newleafOST =
@@ -77,4 +77,4 @@ const Guide = () => {
   );
 };
 
-export default Guide;
+export default Info;
