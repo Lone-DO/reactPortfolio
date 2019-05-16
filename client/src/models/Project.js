@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Project = props => {
   return (
@@ -8,9 +9,9 @@ const Project = props => {
       <i>{props.description}</i>
 
       {props.type === "app" ? (
-        <a href={props.launch}>
+        <Link to={props.launch}>
           <button>Launch App</button>
-        </a>
+        </Link>
       ) : (
         <a href={props.launch}>
           <button>Launch App</button>

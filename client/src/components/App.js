@@ -6,6 +6,7 @@ import "../assets/styles/App.css";
 import Header from "./Header";
 import Landing from "./Landing";
 import ACTunesApp from "./projects/_actunes/index";
+import AlbumNew from "./projects/_actunes/albums/AlbumNew";
 import UndertaleApp from "./projects/_undertale/index";
 import Footer from "./Footer";
 
@@ -14,11 +15,12 @@ const App = () => {
     <div className="App">
       <BrowserRouter>
         <div className="App-body">
-          <Header />
+          <Route path="/" exact component={Header} />
           <Route path="/" exact component={Landing} />
+          <Route path="/" exact component={Footer} />
           <Route path="/actunes" exact component={ACTunesApp} />
+          <Route path="/actunes/new" component={AlbumNew} />
           <Route path="/undertale" exact component={UndertaleApp} />
-          <Footer />
         </div>
       </BrowserRouter>
     </div>
