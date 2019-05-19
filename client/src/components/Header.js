@@ -2,15 +2,19 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 // note to self - assets must be imported outside HTML
-import logo from "../assets/images/titan.gif";
+import logo from "../assets/images/avatar-Lotus.png";
 
 const Header = () => {
   return (
-    <header className="App-header">
+    <header className="App_header">
       <Link to="/">
-        <img src={logo} alt="" />
+        <picture className="App_header-banner">
+          <source />
+          <img alt="" srcset="" />
+        </picture>
+        <img className="App_header_logo-img" src={logo} alt="" />
+        <h1 className="App_header_logo-title">Lone-DO</h1>
       </Link>
-      <p> Header Contents...</p>
     </header>
   );
 };
