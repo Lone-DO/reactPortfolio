@@ -1,6 +1,6 @@
 import React from "react";
 
-const albumList = () => {
+const albumList = props => {
   return (
     <ol>
       <li>List of Music</li>

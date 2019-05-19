@@ -30,7 +30,10 @@ class ACTunes extends Component {
       case false:
         return <h3>Loading...</h3>;
       default:
-        return [<Clock props={this.state.albumns} />, <Footer />];
+        return [
+          <Clock key="AC-Clock" data={this.state.albumns} />,
+          <Footer key="AC-Footer" data={this.state.albumns} />
+        ];
     }
   }
 

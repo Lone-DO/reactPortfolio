@@ -1,3 +1,5 @@
+@import "_variables.scss";
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -5,6 +7,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  background-color: $darkBlue;
+  color: white;
 }
 
 code {
@@ -13,7 +18,6 @@ code {
 }
 
 .App {
-  text-align: center;
 }
 
 .App-logo {
@@ -23,7 +27,7 @@ code {
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: $primaryBlue;
   // min-height: 10vh;
   display: flex;
   flex-direction: row;
@@ -34,7 +38,7 @@ code {
 }
 
 .App-link {
-  color: #61dafb;
+  color: $primaryBlue;
 }
 
 @keyframes App-logo-spin {

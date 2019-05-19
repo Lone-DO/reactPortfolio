@@ -6,7 +6,13 @@ class Clock extends Component {
     this.state = {};
   }
 
+  renderContent() {
+    this.props.data.map(album => console.log(album));
+  }
+
   render() {
+    this.renderContent();
+
     return <div>Hello World</div>;
   }
 }
