@@ -5,9 +5,12 @@ class Clock extends Component {
   constructor() {
     super();
     this.state = {
-      hours: "00",
-      minutes: "00",
-      seconds: "00"
+      period: "AM",
+      isloaded: false,
+      date: new Date(),
+      hours: new Date().getHours(),
+      minutes: new Date().getMinutes(),
+      seconds: new Date().getSeconds()
     };
     this.timer = this.timer.bind(this);
   }
@@ -15,7 +18,9 @@ class Clock extends Component {
   timer() {
     setInterval(() => {
       const prepend = value => (value = value < 10 ? `0${value}` : value);
+      let { hours, minutes, seconds, period, isloaded } = this.state;
       let date = new Date();
+      let prevHour = this.state.date.getHours();
       let currentMinute = date.getMinutes().toString();
       let currentSecond = date.getSeconds().toString();
 
@@ -24,14 +29,22 @@ class Clock extends Component {
           ? (date.getHours() - 12).toString()
           : date.getHours().toString();
 
-      if (this.state.hours !== currentHour) {
+      if (hours !== currentHour) {
         this.setState({ hours: prepend(currentHour) });
       }
-      if (this.state.minutes !== currentMinute) {
+      if (minutes !== currentMinute) {
         this.setState({ minutes: prepend(currentMinute) });
       }
-      if (this.state.seconds !== currentSecond) {
+      if (seconds !== currentSecond) {
         this.setState({ seconds: prepend(currentSecond) });
+      }
+      if (prevHour > 12) {
+        this.setState({ period: "PM" });
+      } else if (prevHour < 12 && period !== "AM") {
+        this.setState({ period: "AM" });
+      }
+      if (!isloaded) {
+        this.setState({ isloaded: true });
       }
     }, 1000);
   }
@@ -39,23 +52,26 @@ class Clock extends Component {
   componentDidMount() {
     this.timer();
   }
+
   renderContent() {
     return [
       <Player
+        key="musicPlayer"
         audioData={this.props.audioData}
         videoData={this.props.videoData}
         time={this.state}
       />,
-      <div>
+      <div key="time">
         <i>{this.state.hours}</i>
         <i>:{this.state.minutes}</i>
         <i>:{this.state.seconds}</i>
+        <i>{this.state.period}</i>
       </div>
     ];
   }
 
   render() {
-    return <div>{this.renderContent()}</div>;
+    return this.renderContent();
   }
 }
 
