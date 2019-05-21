@@ -3,13 +3,17 @@ import React, { Component } from "react";
 import Clock from "./_clock";
 import Header from "./_header";
 import Footer from "./_footer";
+import audioData from "./albums/_audioData";
+
+import loadingGif from "../../../assets/images/loading.gif";
 // import Generations from "./generations";
 
 class ACTunes extends Component {
   constructor() {
     super();
     this.state = {
-      albumns: [],
+      videoData: [],
+      audioData: audioData,
       userAlbumns: [],
       isLoaded: false
     };
@@ -20,7 +24,7 @@ class ACTunes extends Component {
       "https://api.mlab.com/api/1/databases/lone-do/collections/albums?apiKey=9P6rUGDfq5OxFXag9RZYNkk3U2vF6IT0"
     )
       .then(res => res.json())
-      .then(res => this.setState({ albumns: res, isLoaded: true }));
+      .then(res => this.setState({ videoData: res, isLoaded: true }));
   }
 
   renderContent() {
@@ -28,11 +32,22 @@ class ACTunes extends Component {
       case null:
         return;
       case false:
-        return <h3>Loading...</h3>;
+        return [
+          <img key="loadingGif" alt="loading assets gif" src={loadingGif} />,
+          <h3 key="loadingTxt">Loading...</h3>
+        ];
       default:
         return [
-          <Clock key="AC-Clock" data={this.state.albumns} />,
-          <Footer key="AC-Footer" data={this.state.albumns} />
+          <Clock
+            key="AC-Clock"
+            videoData={this.state.videoData}
+            audioData={this.state.audioData}
+          />,
+          <Footer
+            key="AC-Footer"
+            videoData={this.state.videoData}
+            audioData={this.state.audioData}
+          />
         ];
     }
   }

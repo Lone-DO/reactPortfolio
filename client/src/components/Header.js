@@ -10,7 +10,7 @@ const Header = () => {
       <Link to="/">
         <picture className="App_header-banner">
           <source />
-          <img alt="" srcset="" />
+          <img alt="" srcSet="" />
         </picture>
         <img className="App_header_logo-img" src={logo} alt="" />
         <h1 className="App_header_logo-title">Lone-DO</h1>
