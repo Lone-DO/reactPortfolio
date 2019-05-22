@@ -1,25 +1,36 @@
 import React, { Component } from "react";
 
+import AudioComponent from "./AudioComponent";
+
 class Player extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       hasStarted: false,
       weather: "Normal",
       weatherData: {},
       weatherKey: "c818f18fb44cfccea6436940f6cea5f8",
+      location: "",
+      unit: "metric",
       song: ""
     };
     this.loadSong = this.loadSong.bind(this);
     this.loadWeather = this.loadWeather.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  loadWeather(location = "Hessen", unit = "metric") {
-    const key = "c818f18fb44cfccea6436940f6cea5f8";
-    let url = `http://api.openweathermap.org/data/2.5/weather?q=${location}&units=${unit}&appid=${key}`;
+  loadWeather(event) {
+    event.preventDefault();
+    let { weatherKey, location, unit } = this.state;
+    if (location === "") {
+      location = "portland";
+    }
+    console.log(location);
+    let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${location}&units=${unit}&appid=${weatherKey}`;
     let updated = console.log("weather updated to: ", this.state.weather);
     try {
-      fetch(url)
+      fetch(apiUrl)
         .then(res => res.json())
         .then(res => this.setState({ weatherData: res }))
         .then(res => {
@@ -84,40 +95,35 @@ class Player extends Component {
     }
   }
 
-  componentDidMount() {
+  handleChange(event) {
+    event.preventDefault();
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
     this.loadWeather();
   }
 
+  // componentDidMount() {}
+
   renderContent() {
-    // this.loadSong();
-    let audio;
-
-    if (this.state.hasStarted) {
-      audio = [
-        <audio controls loop autoPlay id="player" key="player">
-          <source
-            src={this.state.song}
-            type="audio/mp3"
-            className="audioSource"
-          />
-          Your browser does not support the audio element.
-        </audio>,
-        <div key="songDials">
-          <p>{this.state.song}</p>
-          <button onClick={() => this.loadSong("Original")}>Orignal</button>
-          <button onClick={() => this.loadSong("CityFolk")}>City Folk</button>
-          <button onClick={() => this.loadSong("NewLeaf")}>NewLeaf</button>
-        </div>
-      ];
-    } else {
-      audio = <button onClick={() => this.loadSong()}>Start</button>;
-    }
-
     switch (this.props.time.isloaded) {
       case null:
         return;
       case true:
-        return <div className="Player">{audio}</div>;
+        return (
+          <div className="Player">
+            <AudioComponent
+              props={this.state}
+              loadSong={this.loadSong}
+              loadWeather={this.loadWeather}
+              handleChange={this.handleChange}
+              handleSubmit={this.handleSubmit}
+            />
+          </div>
+        );
 
       default:
         return "Loading Audio...";
