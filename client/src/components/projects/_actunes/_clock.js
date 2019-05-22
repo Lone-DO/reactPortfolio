@@ -5,7 +5,7 @@ class Clock extends Component {
   constructor() {
     super();
     this.state = {
-      period: "AM",
+      period: new Date().getHours() < 12 ? "AM" : "PM",
       isloaded: false,
       date: new Date(),
       hours: new Date().getHours(),
@@ -38,9 +38,9 @@ class Clock extends Component {
       if (seconds !== currentSecond) {
         this.setState({ seconds: prepend(currentSecond) });
       }
-      if (prevHour > 12) {
+      if (prevHour > 11) {
         this.setState({ period: "PM" });
-      } else if (prevHour < 12 && period !== "AM") {
+      } else if (prevHour < 11 && period !== "AM") {
         this.setState({ period: "AM" });
       }
       if (!isloaded) {
@@ -54,20 +54,22 @@ class Clock extends Component {
   }
 
   renderContent() {
-    return [
-      <Player
-        key="musicPlayer"
-        audioData={this.props.audioData}
-        videoData={this.props.videoData}
-        time={this.state}
-      />,
-      <div key="time">
-        <i>{this.state.hours}</i>
-        <i>:{this.state.minutes}</i>
-        <i>:{this.state.seconds}</i>
-        <i>{this.state.period}</i>
-      </div>
-    ];
+    return (
+      <main>
+        <Player
+          key="musicPlayer"
+          audioData={this.props.audioData}
+          videoData={this.props.videoData}
+          time={this.state}
+        />
+        <div className="clock" key="time">
+          <i>{this.state.hours}</i>
+          <i>:{this.state.minutes}</i>
+          <i>:{this.state.seconds}</i>
+          <i>{this.state.period}</i>
+        </div>
+      </main>
+    );
   }
 
   render() {

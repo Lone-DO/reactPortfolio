@@ -19,32 +19,49 @@ class Player extends Component {
         ? hours.replace("0", "") + period
         : hours + period;
 
-    if (playlist === undefined && !this.state.hasStarted) {
-      this.setState({
-        hasStarted: true,
-        song: audioData.Original[this.state.weather][title]
-      });
-    } else if (playlist !== undefined) {
+    if (title === "12PM") {
+      title = "Noon";
+    } else if (hours === "00") {
+      title = "Midnight";
+    }
+
+    const defaultSong = () => {
+      try {
+        this.setState({
+          song: audioData.Original[this.state.weather][title],
+          hasStarted: true
+        });
+        if (this.state.song === "") {
+        }
+        console.log(this.state.song);
+      } catch (err) {
+        alert(err.message);
+      }
+    };
+    const setSong = () => {
       this.setState({
         song: audioData[playlist][this.state.weather][title]
       });
-    }
+      // console.log("Song Set", this.state.song);
+      document.getElementById("player").load();
+    };
 
-    document.getElementById("player").load();
+    if (playlist === undefined && !this.state.hasStarted) {
+      defaultSong();
+    } else if (playlist !== undefined) {
+      setSong();
+    }
   }
 
   componentDidMount() {}
+
   renderContent() {
-    if (this.props.time.isloaded) {
-      return [
-        <audio
-          controls
-          loop
-          autoPlay
-          id="player"
-          className="player"
-          key="player"
-        >
+    // this.loadSong();
+    let audio;
+
+    if (this.state.hasStarted) {
+      audio = [
+        <audio controls loop autoPlay id="player" key="player">
           <source
             src={this.state.song}
             type="audio/mp3"
@@ -60,7 +77,17 @@ class Player extends Component {
         </div>
       ];
     } else {
-      return "Loading Audio...";
+      audio = <button onClick={() => this.loadSong()}>Start</button>;
+    }
+
+    switch (this.props.time.isloaded) {
+      case null:
+        return;
+      case true:
+        return <div className="Player">{audio}</div>;
+
+      default:
+        return "Loading Audio...";
     }
   }
 
