@@ -5,7 +5,7 @@ const AudioComponent = ({
   loadSong,
   loadWeather,
   handleChange,
-  handleSubmit
+  chooseWeather
 }) => {
   if (props.hasStarted) {
     return [
@@ -18,12 +18,12 @@ const AudioComponent = ({
         <button onClick={() => loadSong("Original")}>Orignal</button>
         <button onClick={() => loadSong("CityFolk")}>City Folk</button>
         <button onClick={() => loadSong("NewLeaf")}>NewLeaf</button>
+        <button onClick={() => chooseWeather("Raining")}>Make It Rain</button>
       </div>,
       <WeatherForm
         key="WeatherForm"
         props={props}
         handleChange={handleChange}
-        handleSubmit={handleSubmit}
         loadWeather={loadWeather}
       />
     ];

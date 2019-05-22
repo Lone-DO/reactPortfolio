@@ -7,9 +7,10 @@ class Player extends Component {
     super(props);
     this.state = {
       hasStarted: false,
-      weather: "Normal",
+      weather: "",
       weatherData: {},
       weatherKey: "c818f18fb44cfccea6436940f6cea5f8",
+      setAlbum: "",
       location: "",
       unit: "metric",
       song: ""
@@ -17,7 +18,7 @@ class Player extends Component {
     this.loadSong = this.loadSong.bind(this);
     this.loadWeather = this.loadWeather.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.chooseWeather = this.chooseWeather.bind(this);
   }
 
   loadWeather(event) {
@@ -42,7 +43,7 @@ class Player extends Component {
 
           switch (weatherData.weather.main) {
             case "Rain":
-              return this.setState({ weather: "Rain" });
+              return this.setState({ weather: "Raining" });
             case "Snow":
               return this.setState({ weather: "Winter" });
             default:
@@ -55,9 +56,10 @@ class Player extends Component {
     } catch (err) {
       alert(err, "Please try again...");
     }
+    this.loadSong();
   }
 
-  loadSong(playlist, weather = this.state.weather) {
+  loadSong(playlist = this.state.setAlbum, weather = this.state.weather) {
     let { hours, period } = this.props.time;
     let { audioData } = this.props;
     let title =
@@ -72,8 +74,13 @@ class Player extends Component {
 
     const defaultSong = () => {
       try {
+        if (weather === "") {
+          weather = "Normal";
+        }
         this.setState({
-          song: audioData.Original[this.state.weather][title],
+          song: audioData.Original[weather][title],
+          weather: weather,
+          setAlbum: "Original",
           hasStarted: true
         });
       } catch (err) {
@@ -82,17 +89,18 @@ class Player extends Component {
     };
     const setSong = () => {
       this.setState({
-        song: audioData[playlist][this.state.weather][title]
+        song: audioData[playlist][weather][title],
+        setAlbum: playlist
       });
-      // console.log("Song Set", this.state.song);
       document.getElementById("player").load();
     };
 
-    if (playlist === undefined && !this.state.hasStarted) {
+    if (playlist === "" && !this.state.hasStarted) {
       defaultSong();
-    } else if (playlist !== undefined) {
+    } else if (playlist !== "") {
       setSong();
     }
+    console.log(`Songs loading... ${playlist} & weather is: ${weather}`);
   }
 
   handleChange(event) {
@@ -101,12 +109,26 @@ class Player extends Component {
     this.setState({ [name]: value });
   }
 
-  handleSubmit(event) {
-    event.preventDefault();
-    this.loadWeather();
-  }
+  chooseWeather(weather) {
+    switch (weather) {
+      case "Raining":
+        this.setState({ weather: "Raining" });
+        // this.loadSong();
+        break;
+      case "Winter":
+        this.setState({ weather: "Winter" });
+        // this.loadSong();
+        break;
+      case "Normal":
+        this.setState({ weather: "Normal" });
+        // this.loadSong();
+        break;
+      default:
+        break;
+    }
 
-  // componentDidMount() {}
+    this.loadSong();
+  }
 
   renderContent() {
     switch (this.props.time.isloaded) {
@@ -120,7 +142,7 @@ class Player extends Component {
               loadSong={this.loadSong}
               loadWeather={this.loadWeather}
               handleChange={this.handleChange}
-              handleSubmit={this.handleSubmit}
+              chooseWeather={this.chooseWeather}
             />
           </div>
         );
