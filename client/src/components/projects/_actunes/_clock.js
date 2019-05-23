@@ -56,18 +56,18 @@ class Clock extends Component {
   renderContent() {
     return (
       <main>
-        <Player
-          key="musicPlayer"
-          audioData={this.props.audioData}
-          videoData={this.props.videoData}
-          time={this.state}
-        />
         <div className="clock" key="time">
           <i>{this.state.hours}</i>
           <i>:{this.state.minutes}</i>
           <i>:{this.state.seconds}</i>
           <i>{this.state.period}</i>
         </div>
+        <Player
+          key="musicPlayer"
+          audioData={this.props.audioData}
+          videoData={this.props.videoData}
+          time={this.state}
+        />
       </main>
     );
   }

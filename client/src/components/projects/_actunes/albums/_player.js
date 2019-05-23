@@ -12,6 +12,7 @@ class Player extends Component {
       weatherKey: "c818f18fb44cfccea6436940f6cea5f8",
       setAlbum: "",
       location: "",
+      prevHour: "",
       unit: "metric",
       song: "",
       title: ""
@@ -24,6 +25,7 @@ class Player extends Component {
   loadSong(playlist = this.state.setAlbum, weather = this.state.weather) {
     let { hours, period } = this.props.time;
     let { audioData } = this.props;
+
     let title =
       hours < 10 && hours.indexOf("0") > -1
         ? hours.replace("0", "") + period
@@ -34,34 +36,36 @@ class Player extends Component {
       title = "Midnight";
     }
 
-    const defaultSong = () => {
-      try {
-        weather = "Normal";
+    try {
+      const defaultSong = () => {
         this.setState({
-          song: audioData.Original[weather][title],
+          song: audioData.Original.Normal[title],
           title: title,
-          weather: weather,
+          weather: "Normal",
           setAlbum: "Original",
+          prevHour: hours,
           hasStarted: true
         });
-      } catch (err) {
-        alert(err.message);
-      }
-    };
-    const setSong = () => {
-      this.setState({
-        song: audioData[playlist][weather][title],
-        title: title,
-        weather: weather,
-        setAlbum: playlist
-      });
-      document.getElementById("player").load();
-    };
+      };
 
-    if (playlist === "" && !this.state.hasStarted) {
-      defaultSong();
-    } else if (playlist !== "") {
-      setSong();
+      const setSong = () => {
+        this.setState({
+          song: audioData[playlist][weather][title],
+          title: title,
+          weather: weather,
+          prevHour: hours,
+          setAlbum: playlist
+        });
+        document.getElementById("player").load();
+      };
+
+      if (playlist === "" && !this.state.hasStarted) {
+        defaultSong();
+      } else if (playlist !== "") {
+        setSong();
+      }
+    } catch (err) {
+      alert(`Issue has occured while loading Audio... > ${err.message}`);
     }
   }
 
@@ -102,6 +106,12 @@ class Player extends Component {
         });
     } catch (err) {
       alert(err.message);
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.state.prevHour !== prevProps.time.hours && this.state.hasStarted) {
+      this.loadSong();
     }
   }
 
