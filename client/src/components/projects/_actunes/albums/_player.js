@@ -13,50 +13,12 @@ class Player extends Component {
       setAlbum: "",
       location: "",
       unit: "metric",
-      song: ""
+      song: "",
+      title: ""
     };
     this.loadSong = this.loadSong.bind(this);
     this.loadWeather = this.loadWeather.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.chooseWeather = this.chooseWeather.bind(this);
-  }
-
-  loadWeather(event) {
-    event.preventDefault();
-    let { weatherKey, location, unit } = this.state;
-    if (location === "") {
-      location = "portland";
-    }
-    console.log(location);
-    let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${location}&units=${unit}&appid=${weatherKey}`;
-    let updated = console.log("weather updated to: ", this.state.weather);
-    try {
-      fetch(apiUrl)
-        .then(res => res.json())
-        .then(res => this.setState({ weatherData: res }))
-        .then(res => {
-          let { weatherData } = this.state;
-          let message = `it is currently ${weatherData.main.temp} celcius in ${
-            weatherData.name
-          }`;
-          console.log(weatherData);
-
-          switch (weatherData.weather.main) {
-            case "Rain":
-              return this.setState({ weather: "Raining" });
-            case "Snow":
-              return this.setState({ weather: "Winter" });
-            default:
-              return this.setState({ weather: "Normal" });
-          }
-          // eslint-disable-next-line
-          updated();
-          alert(message);
-        });
-    } catch (err) {
-      alert(err, "Please try again...");
-    }
-    this.loadSong();
   }
 
   loadSong(playlist = this.state.setAlbum, weather = this.state.weather) {
@@ -74,11 +36,10 @@ class Player extends Component {
 
     const defaultSong = () => {
       try {
-        if (weather === "") {
-          weather = "Normal";
-        }
+        weather = "Normal";
         this.setState({
           song: audioData.Original[weather][title],
+          title: title,
           weather: weather,
           setAlbum: "Original",
           hasStarted: true
@@ -90,6 +51,8 @@ class Player extends Component {
     const setSong = () => {
       this.setState({
         song: audioData[playlist][weather][title],
+        title: title,
+        weather: weather,
         setAlbum: playlist
       });
       document.getElementById("player").load();
@@ -100,7 +63,6 @@ class Player extends Component {
     } else if (playlist !== "") {
       setSong();
     }
-    console.log(`Songs loading... ${playlist} & weather is: ${weather}`);
   }
 
   handleChange(event) {
@@ -109,25 +71,38 @@ class Player extends Component {
     this.setState({ [name]: value });
   }
 
-  chooseWeather(weather) {
-    switch (weather) {
-      case "Raining":
-        this.setState({ weather: "Raining" });
-        // this.loadSong();
-        break;
-      case "Winter":
-        this.setState({ weather: "Winter" });
-        // this.loadSong();
-        break;
-      case "Normal":
-        this.setState({ weather: "Normal" });
-        // this.loadSong();
-        break;
-      default:
-        break;
-    }
+  loadWeather(event) {
+    event.preventDefault();
 
-    this.loadSong();
+    try {
+      let { weatherKey, location, unit } = this.state;
+      let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${location}&units=${unit}&appid=${weatherKey}`;
+
+      if (location === "") {
+        location = "portland";
+      }
+      fetch(apiUrl)
+        .then(res => res.json())
+        .then(res => this.setState({ weatherData: res }))
+        .then(res => {
+          try {
+            let { weatherData, setAlbum } = this.state;
+
+            switch (weatherData.weather.main) {
+              case "Rain":
+                return this.loadSong(setAlbum, "Raining");
+              case "Snow":
+                return this.loadSong(setAlbum, "Winter");
+              default:
+                return this.loadSong(setAlbum, "Normal");
+            }
+          } catch (err) {
+            alert("City Not Found, Please try again...");
+          }
+        });
+    } catch (err) {
+      alert(err.message);
+    }
   }
 
   renderContent() {
@@ -142,7 +117,6 @@ class Player extends Component {
               loadSong={this.loadSong}
               loadWeather={this.loadWeather}
               handleChange={this.handleChange}
-              chooseWeather={this.chooseWeather}
             />
           </div>
         );
