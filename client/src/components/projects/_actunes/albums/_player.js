@@ -91,10 +91,13 @@ class Player extends Component {
         .then(res => {
           try {
             let { weatherData, setAlbum } = this.state;
-
-            switch (weatherData.weather.main) {
+            console.log(weatherData.weather["0"].main);
+            switch (weatherData.weather["0"].main) {
               case "Rain":
+              case "Clouds":
+              case "Thunderstorm":
                 return this.loadSong(setAlbum, "Raining");
+
               case "Snow":
                 return this.loadSong(setAlbum, "Winter");
               default:
