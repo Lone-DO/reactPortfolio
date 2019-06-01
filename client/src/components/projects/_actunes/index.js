@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import Clock from "./_clock";
+import Clock from "./Clock";
 import Header from "./_header";
 import Footer from "./_footer";
 import audioData from "./albums/_audioData";

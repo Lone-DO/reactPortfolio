@@ -94,7 +94,6 @@ class Player extends Component {
             console.log(weatherData.weather["0"].main);
             switch (weatherData.weather["0"].main) {
               case "Rain":
-              case "Clouds":
               case "Thunderstorm":
                 return this.loadSong(setAlbum, "Raining");
 
