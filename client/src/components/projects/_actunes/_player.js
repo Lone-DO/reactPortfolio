@@ -1,18 +1,32 @@
 import React from "react";
-import WeatherForm from "./WeatherForm";
+import Search from "./WeatherForm";
 
 import sunny from "../../../assets/images/AC_App/weather-normal.svg";
 import raining from "../../../assets/images/AC_App/weather-raining.svg";
 import winter from "../../../assets/images/AC_App/weather-winter.svg";
 
-const AudioComponent = ({ props, loadSong, loadWeather, handleChange }) => {
-  if (props.hasStarted) {
+const Player = ({ props, state, loadSong, loadWeather, handleChange }) => {
+  if (state.hasStarted) {
+    let time = props.time.hours + "00";
+    if (props.time.period === "PM" && new Date().getHours() > 12) {
+      time = parseInt(props.time.hours) + 12 + "00";
+    } else {
+      time = props.time.hours + "00";
+    }
+
     return [
+      <div className="clock" key="time">
+        <img src={`/images/AC_App/Timeline/(${time}).png`} alt="Clock" />
+        <i>{props.time.hours}</i>
+        <i>:{props.time.minutes}</i>
+        <i>:{props.time.seconds}</i>
+        <i>{props.time.period}</i>
+      </div>,
       <h4 key="Song Title">
-        {props.setAlbum}, {props.title}, {props.weather}
+        {state.setAlbum}, {state.title}, {state.weather}
       </h4>,
       <audio controls loop autoPlay id="player" key="player">
-        <source src={props.song} type="audio/mp3" className="audioSource" />
+        <source src={state.song} type="audio/mp3" className="audioSource" />
         Your browser does not support the audio element.
       </audio>,
       <div key="songDials">
@@ -22,29 +36,29 @@ const AudioComponent = ({ props, loadSong, loadWeather, handleChange }) => {
         <br />
 
         <img
-          onClick={() => loadSong(props.setAlbum, "Raining")}
+          onClick={() => loadSong(state.setAlbum, "Raining")}
           className="weatherIcon"
           alt="Change Weather to Rain Theme"
           src={raining}
         />
 
         <img
-          onClick={() => loadSong(props.setAlbum, "Winter")}
+          onClick={() => loadSong(state.setAlbum, "Winter")}
           className="weatherIcon"
           alt="Change Weather to Winter Theme"
           src={winter}
         />
 
         <img
-          onClick={() => loadSong(props.setAlbum, "Normal")}
+          onClick={() => loadSong(state.setAlbum, "Normal")}
           className="weatherIcon"
           alt="Change Weather to Normal Theme"
           src={sunny}
         />
       </div>,
-      <WeatherForm
+      <Search
         key="WeatherForm"
-        props={props}
+        props={state}
         handleChange={handleChange}
         loadWeather={loadWeather}
       />
@@ -54,4 +68,4 @@ const AudioComponent = ({ props, loadSong, loadWeather, handleChange }) => {
   }
 };
 
-export default AudioComponent;
+export default Player;

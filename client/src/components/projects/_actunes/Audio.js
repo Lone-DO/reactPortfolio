@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
-import AudioComponent from "./AudioComponent";
+import Player from "./_player";
 
-class Player extends Component {
+class Audio extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -124,8 +124,9 @@ class Player extends Component {
       case true:
         return (
           <div className="Player">
-            <AudioComponent
-              props={this.state}
+            <Player
+              props={this.props}
+              state={this.state}
               loadSong={this.loadSong}
               loadWeather={this.loadWeather}
               handleChange={this.handleChange}
@@ -143,4 +144,4 @@ class Player extends Component {
   }
 }
 
-export default Player;
+export default Audio;

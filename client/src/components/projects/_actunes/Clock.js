@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Player from "./Player";
+import Audio from "./Audio";
 
 class Clock extends Component {
   constructor() {
@@ -56,13 +56,7 @@ class Clock extends Component {
   renderContent() {
     return (
       <main>
-        <div className="clock" key="time">
-          <i>{this.state.hours}</i>
-          <i>:{this.state.minutes}</i>
-          <i>:{this.state.seconds}</i>
-          <i>{this.state.period}</i>
-        </div>
-        <Player
+        <Audio
           key="musicPlayer"
           audioData={this.props.audioData}
           videoData={this.props.videoData}
