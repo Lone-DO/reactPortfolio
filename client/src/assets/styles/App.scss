@@ -1,4 +1,5 @@
 @import "_variables.scss";
+@import "_AC-App.scss";
 
 @font-face {
   font-family: "FerroRosso";
@@ -15,15 +16,29 @@ body {
 }
 
 .App_header {
-  // background-color: $darkBlue;
-  background-image: url("../images/Desktop_Banner.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  opacity: 0.6;
-  height: 20vmax;
-  &_logo-title {
-    display: inline;
-    color: white;
-    font-family: "FerroRosso";
+  // height: 20vmax;
+  margin-bottom: 3rem;
+
+  &-banner {
+    width: 100%;
+    display: block;
+  }
+
+  &_content {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+
+    &-title {
+      display: inline;
+      color: white;
+      font-family: "FerroRosso";
+    }
+  }
+  &-banner,
+  &_content {
+    max-height: 30vmax;
+    z-index: 1;
   }
 }

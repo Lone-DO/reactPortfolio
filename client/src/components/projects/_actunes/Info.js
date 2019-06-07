@@ -2,12 +2,6 @@ import React from "react";
 
 const Info = () => {
   let wallpaperURL = "http://www.pixelstalk.net/animal-crossing-wallpapers-hd/",
-    originalOST = "https://www.youtube.com/playlist?list=PL719681019F01F212",
-    newleafOST =
-      "https://www.youtube.com/playlist?list=PLoIp-AJdIshrKJ7O7h2DmXCS9POcR8lTZ",
-    cityfolkOST =
-      "https://www.youtube.com/playlist?list=PLjZDKdtibWQ5MscZsybx1uU15IsLlSLzi",
-    wikiURL = "https://github.com/Lone-DO/AC-Clock/wiki",
     taneURL = "http://tane.us/ac/wwcf.html",
     nintendoURL = "http://www.animal-crossing.com";
 
@@ -42,12 +36,6 @@ const Info = () => {
       </p>
 
       <ol className="Actunes_guide-links">
-        <span>
-          Remember to check out the wiki for full details
-          <a href={wikiURL}>
-            <i>.</i>
-          </a>
-        </span>
         <li>
           <p>
             General Idea,<a href={taneURL}>Tane</a> Note that i recently found
@@ -64,13 +52,21 @@ const Info = () => {
           <a href={wallpaperURL}>Wallpapers/ images</a>
         </li>
         <li>
-          <a href={originalOST}>Original OST</a>
-        </li>
-        <li>
-          <a href={newleafOST}>New Leaf OST</a>
-        </li>
-        <li>
-          <a href={cityfolkOST}>City Folk OST</a>
+          Weather SVG Credits: Icons made by{" "}
+          <a href="https://www.freepik.com/" title="Freepik">
+            Freepik
+          </a>{" "}
+          from{" "}
+          <a href="https://www.flaticon.com/" title="Flaticon">
+            www.flaticon.com
+          </a>{" "}
+          is licensed by{" "}
+          <a
+            href="http://creativecommons.org/licenses/by/3.0/"
+            title="Creative Commons BY 3.0"
+          >
+            CC 3.0 BY
+          </a>
         </li>
       </ol>
     </div>

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
-import Info from "./_info";
-import AlbumList from "./albums/_albumList";
+import Info from "./Info";
+import AlbumList from "./List";
 
 class Footer extends Component {
   constructor() {

@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import Clock from "./Clock";
 import Header from "./_header";
 import Footer from "./_footer";
-import audioData from "./albums/_audioData";
+import audioData from "./_audioData";
 
 import loadingGif from "../../../assets/images/loading.gif";
 // import Generations from "./generations";

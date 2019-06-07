@@ -1,5 +1,10 @@
 import React from "react";
 import WeatherForm from "./WeatherForm";
+
+import sunny from "../../../assets/images/AC_App/weather-normal.svg";
+import raining from "../../../assets/images/AC_App/weather-raining.svg";
+import winter from "../../../assets/images/AC_App/weather-winter.svg";
+
 const AudioComponent = ({ props, loadSong, loadWeather, handleChange }) => {
   if (props.hasStarted) {
     return [
@@ -15,13 +20,27 @@ const AudioComponent = ({ props, loadSong, loadWeather, handleChange }) => {
         <button onClick={() => loadSong("CityFolk")}>City Folk</button>
         <button onClick={() => loadSong("NewLeaf")}>NewLeaf</button>
         <br />
-        <button onClick={() => loadSong(props.setAlbum, "Raining")}>
-          Rain
-        </button>
-        <button onClick={() => loadSong(props.setAlbum, "Winter")}>Snow</button>
-        <button onClick={() => loadSong(props.setAlbum, "Normal")}>
-          Sunny
-        </button>
+
+        <img
+          onClick={() => loadSong(props.setAlbum, "Raining")}
+          className="weatherIcon"
+          alt="Change Weather to Rain Theme"
+          src={raining}
+        />
+
+        <img
+          onClick={() => loadSong(props.setAlbum, "Winter")}
+          className="weatherIcon"
+          alt="Change Weather to Winter Theme"
+          src={winter}
+        />
+
+        <img
+          onClick={() => loadSong(props.setAlbum, "Normal")}
+          className="weatherIcon"
+          alt="Change Weather to Normal Theme"
+          src={sunny}
+        />
       </div>,
       <WeatherForm
         key="WeatherForm"

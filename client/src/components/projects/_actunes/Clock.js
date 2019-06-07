@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Player from "./albums/_player";
+import Player from "./Player";
 
 class Clock extends Component {
   constructor() {

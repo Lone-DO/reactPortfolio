@@ -1,3 +1,10 @@
+.weatherIcon {
+  background-color: ghostwhite;
+  width: 2rem;
+  padding: 5px;
+  cursor: pointer;
+  margin: 0.5em; }
+
 @font-face {
   font-family: "FerroRosso";
   src: url("../fonts/FerroRosso.ttf"); }
@@ -11,12 +18,19 @@ body {
   color: white; }
 
 .App_header {
-  background-image: url("../images/Desktop_Banner.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  opacity: 0.6;
-  height: 20vmax; }
-  .App_header_logo-title {
-    display: inline;
-    color: white;
-    font-family: "FerroRosso"; }
+  margin-bottom: 3rem; }
+  .App_header-banner {
+    width: 100%;
+    display: block; }
+  .App_header_content {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0; }
+    .App_header_content-title {
+      display: inline;
+      color: white;
+      font-family: "FerroRosso"; }
+  .App_header-banner, .App_header_content {
+    max-height: 30vmax;
+    z-index: 1; }
