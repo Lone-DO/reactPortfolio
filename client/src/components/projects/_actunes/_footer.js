@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import Info from "./Info";
-import AlbumList from "./List";
+import List from "./List";
 
 class Footer extends Component {
   constructor() {
@@ -49,7 +49,12 @@ class Footer extends Component {
       <button
         key="listShow"
         className="btn"
-        onClick={() => this.toggleDisplay("listShowing", <AlbumList />)}
+        onClick={() =>
+          this.toggleDisplay(
+            "listShowing",
+            <List audioData={this.props.audioData} />
+          )
+        }
       >
         Generations
       </button>
@@ -67,7 +72,12 @@ class Footer extends Component {
       <button
         key="infoShow"
         className="btn"
-        onClick={() => this.toggleDisplay("infoShowing", <Info />)}
+        onClick={() =>
+          this.toggleDisplay(
+            "infoShowing",
+            <Info props={this.props.audioData} />
+          )
+        }
       >
         Info
       </button>

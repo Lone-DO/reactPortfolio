@@ -38,16 +38,8 @@ class ACTunes extends Component {
         ];
       default:
         return [
-          <Clock
-            key="AC-Clock"
-            videoData={this.state.videoData}
-            audioData={this.state.audioData}
-          />,
-          <Footer
-            key="AC-Footer"
-            videoData={this.state.videoData}
-            audioData={this.state.audioData}
-          />
+          <Clock key="AC-Clock" audioData={this.state.audioData} />,
+          <Footer key="AC-Footer" audioData={this.state.audioData} />
         ];
     }
   }
