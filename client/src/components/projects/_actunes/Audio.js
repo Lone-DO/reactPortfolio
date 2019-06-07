@@ -61,7 +61,10 @@ class Audio extends Component {
 
       if (playlist === "" && !this.state.hasStarted) {
         defaultSong();
-      } else if (playlist !== "") {
+      } else if (
+        playlist !== "" &&
+        this.state.song !== audioData[playlist][weather][title]
+      ) {
         setSong();
       }
     } catch (err) {
@@ -82,9 +85,6 @@ class Audio extends Component {
       let { weatherKey, location, unit } = this.state;
       let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${location}&units=${unit}&appid=${weatherKey}`;
 
-      if (location === "") {
-        location = "portland";
-      }
       fetch(apiUrl)
         .then(res => res.json())
         .then(res => this.setState({ weatherData: res }))
