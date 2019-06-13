@@ -37,10 +37,10 @@ class Header extends Component {
           <source
             srcSet={`${bannerMedium} 1380w,
             ${bannerMediumHD} 2760w`}
-            media="(min-width: 990px)"
+            media="(min-width: 800px)"
           />
           <source
-            srcSet={`${bannerSmall} 990w,
+            srcSet={`${bannerSmall} 800w,
              ${bannerSmallHD} 1980w`}
             media="(min-width: 640px)"
           />
@@ -51,13 +51,12 @@ class Header extends Component {
           />
         </picture>
         <div className="App_header_content">
-          <Link to="/">
-            <img
-              className="App_header_content-logo"
-              src={logo}
-              alt="Lotus Logo"
-            />
-            <h1 className="App_header_content-title">Lone-DO</h1>
+          <Link to="/" className="App_header_content_logo">
+            <div className="App_header_content_logo-icon">
+              <img src={logo} alt="Lotus Logo" />
+            </div>
+
+            <h1 className="App_header_content_logo-title">Lone-DO</h1>
           </Link>
           <span className="hamburger" />
           {navBar}

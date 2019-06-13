@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Project = props => {
+const ProjectModel = props => {
   return (
     <section key={props.title} className={`App-${props.title}`}>
       <h3>{props.name}</h3>
@@ -21,4 +21,4 @@ const Project = props => {
   );
 };
 
-export default Project;
+export default ProjectModel;

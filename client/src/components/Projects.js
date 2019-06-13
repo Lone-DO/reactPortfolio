@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import appData from "./projects/appData";
-import Project from "../models/Project";
+import ProjectModel from "./_projectModel";
 
 class Projects extends Component {
   constructor() {
@@ -18,7 +18,7 @@ class Projects extends Component {
   render() {
     const Applications = this.state.apps.map(app => {
       return (
-        <Project
+        <ProjectModel
           key={app.title}
           title={app.title}
           name={app.name}
