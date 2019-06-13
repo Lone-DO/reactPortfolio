@@ -17,10 +17,36 @@ const Player = ({ props, state, loadSong, loadWeather, handleChange }) => {
     return [
       <div className="clock" key="time">
         <img src={`/images/AC_App/Timeline/(${time}).png`} alt="Clock" />
-        <i>{props.time.hours}</i>
-        <i>:{props.time.minutes}</i>
-        <i>:{props.time.seconds}</i>
-        <i>{props.time.period}</i>
+        <div className="clock_time">
+          <i>{props.time.hours}</i>
+          <i>:{props.time.minutes}</i>
+        </div>
+        {/* <select className="clock_weather" key="weatherDials">
+          <option value="Raining">
+            <img
+              onClick={() => loadSong(state.setAlbum, "Raining")}
+              className="weatherIcon"
+              alt="Change Weather to Rain Theme"
+              src={raining}
+            />
+          </option>
+          <option value="Winter">
+            <img
+              onClick={() => loadSong(state.setAlbum, "Winter")}
+              className="weatherIcon"
+              alt="Change Weather to Winter Theme"
+              src={winter}
+            />
+          </option>
+          <option value="Normal">
+            <img
+              onClick={() => loadSong(state.setAlbum, "Normal")}
+              className="weatherIcon"
+              alt="Change Weather to Normal Theme"
+              src={sunny}
+            />
+          </option>
+        </select> */}
       </div>,
       <h4 key="Song Title">
         {state.setAlbum}, {state.title}, {state.weather}
@@ -29,12 +55,18 @@ const Player = ({ props, state, loadSong, loadWeather, handleChange }) => {
         <source src={state.song} type="audio/mp3" className="audioSource" />
         Your browser does not support the audio element.
       </audio>,
-      <div key="songDials">
-        <button onClick={() => loadSong("Original")}>Orignal</button>
-        <button onClick={() => loadSong("CityFolk")}>City Folk</button>
-        <button onClick={() => loadSong("NewLeaf")}>NewLeaf</button>
-        <br />
-
+      <div key="songDials" className="timeline">
+        <button className="timeline-item" onClick={() => loadSong("Original")}>
+          Orignal
+        </button>
+        <button className="timeline-item" onClick={() => loadSong("CityFolk")}>
+          City Folk
+        </button>
+        <button className="timeline-item" onClick={() => loadSong("NewLeaf")}>
+          NewLeaf
+        </button>
+      </div>,
+      <div>
         <img
           onClick={() => loadSong(state.setAlbum, "Raining")}
           className="weatherIcon"
@@ -56,6 +88,7 @@ const Player = ({ props, state, loadSong, loadWeather, handleChange }) => {
           src={sunny}
         />
       </div>,
+
       <Search
         key="WeatherForm"
         props={state}

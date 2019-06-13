@@ -19,13 +19,14 @@ const List = props => {
         // songs.map(song => {
         //   console.log(song);
         // });
-        console.log(obj[playlist]);
 
         return (
           <li>
             <div>{playlist}</div>
           </li>
         );
+      } else {
+        return null;
       }
     });
   };

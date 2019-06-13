@@ -1,9 +1,20 @@
-.weatherIcon {
-  background-color: ghostwhite;
-  width: 2rem;
-  padding: 5px;
-  cursor: pointer;
-  margin: 0.5em; }
+@define-mixin atSmall {
+  @media (min-width: 530px) {
+    @mixin-content; } }
+
+@define-mixin atMedium {
+  @media (min-width: 800px) {
+    @mixin-content; } }
+
+@define-mixin atLarge {
+  @media (min-width: 1200px) {
+    @mixin-content; } }
+
+@define-mixin clearfix {
+  ::after {
+    content: "";
+    clear: both;
+    display: block; } }
 
 @font-face {
   font-family: "FerroRosso";
@@ -31,6 +42,38 @@ body {
       display: inline;
       color: white;
       font-family: "FerroRosso"; }
+  .App_header_nav ul {
+    margin: auto; }
+    @media (min-width: 530px) {
+      .App_header_nav ul {
+        float: right;
+        margin-right: 1rem; }
+        .App_header_nav ul li {
+          margin-right: 10px; }
+        .App_header_nav ul li:last-child {
+          margin-right: 0; } }
   .App_header-banner, .App_header_content {
     max-height: 30vmax;
     z-index: 1; }
+
+.weatherIcon {
+  background-color: ghostwhite;
+  width: 2rem;
+  padding: 5px;
+  cursor: pointer;
+  margin: 0.5em; }
+
+.clock {
+  position: relative;
+  text-align: center;
+  width: 20rem;
+  margin: auto; }
+  .clock img {
+    width: 100%; }
+  .clock_time {
+    position: absolute;
+    bottom: 12%;
+    left: 14%;
+    color: black;
+    font-size: 3.5rem;
+    transform: rotate(24deg); }

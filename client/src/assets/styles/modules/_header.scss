@@ -1,0 +1,43 @@
+.App_header {
+  margin-bottom: 3rem;
+
+  &-banner {
+    width: 100%;
+    display: block;
+  }
+
+  &_content {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+
+    &-title {
+      display: inline;
+      color: white;
+      font-family: "FerroRosso";
+    }
+  }
+
+  &_nav ul {
+    margin: auto;
+
+    @media #{$atSmall} {
+      float: right;
+      margin-right: 1rem;
+      li {
+        margin-right: 10px;
+      }
+
+      li:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &-banner,
+  &_content {
+    max-height: 30vmax;
+    z-index: 1;
+  }
+}

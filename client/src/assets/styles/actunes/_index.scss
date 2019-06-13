@@ -1,0 +1,27 @@
+.weatherIcon {
+  background-color: ghostwhite;
+  width: 2rem;
+  padding: 5px;
+  cursor: pointer;
+  margin: 0.5em;
+}
+
+.clock {
+  position: relative;
+  text-align: center;
+  width: 20rem;
+  margin: auto;
+
+  img {
+    width: 100%;
+  }
+
+  &_time {
+    position: absolute;
+    bottom: 12%;
+    left: 14%;
+    color: black;
+    font-size: 3.5rem;
+    transform: rotate(24deg);
+  }
+}

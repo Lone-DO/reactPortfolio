@@ -1,44 +1,9 @@
-@import "_variables.scss";
-@import "_AC-App.scss";
+@import "base/_variables";
+@import "base/_mixins";
+@import "base/global";
 
-@font-face {
-  font-family: "FerroRosso";
-  src: url("../fonts/FerroRosso.ttf");
-}
+// Module Stylings
+@import "modules/header";
 
-body {
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  background-color: $primaryBlue;
-  color: white;
-}
-
-.App_header {
-  // height: 20vmax;
-  margin-bottom: 3rem;
-
-  &-banner {
-    width: 100%;
-    display: block;
-  }
-
-  &_content {
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
-
-    &-title {
-      display: inline;
-      color: white;
-      font-family: "FerroRosso";
-    }
-  }
-  &-banner,
-  &_content {
-    max-height: 30vmax;
-    z-index: 1;
-  }
-}
+// Animal Crossing Styling
+@import "actunes/index";

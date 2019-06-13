@@ -16,10 +16,12 @@ class Header extends Component {
 
   render() {
     const navBar = (
-      <nav>
+      <nav className="App_header_nav">
         <ul>
+          <li>About</li>
           <li>Projects</li>
           <li>Contact</li>
+          <li>Resume</li>
         </ul>
       </nav>
     );
@@ -57,6 +59,7 @@ class Header extends Component {
             />
             <h1 className="App_header_content-title">Lone-DO</h1>
           </Link>
+          <span className="hamburger" />
           {navBar}
         </div>
       </header>
