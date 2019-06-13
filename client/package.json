@@ -15,8 +15,9 @@
     "react-scripts": "3.0.1"
   },
   "scripts": {
-    "start": "npm-run-all -p watch-css start-react",
+    "start": "npm-run-all -p gulp start-react",
     "build": "npm-run-all -s build-css build-react",
+    "gulp": "gulp",
     "start-react": "react-scripts start",
     "build-react": "react-scripts build",
     "build-css": "node-sass-chokidar src/ -o src/",
@@ -38,5 +39,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.6.0",
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-watch": "^5.0.1"
   }
 }
