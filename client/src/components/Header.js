@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 
 // note to self - assets must be imported outside HTML
 import logo from "../assets/images/avatar-Lotus.png";
@@ -15,11 +14,22 @@ class Header extends Component {
   navbar() {}
 
   render() {
+    const header_content_logo = (
+      <div className="App_header_content_logo">
+        <div className="App_header_content_logo-icon">
+          <img src={logo} alt="Lotus Logo" />
+        </div>
+        <h1 className="App_header_content_logo-title">Lone-DO</h1>
+      </div>
+    );
+
     const navBar = (
       <nav className="App_header_nav">
+        <div>{header_content_logo}</div>
+
         <ul>
-          <li>About</li>
           <li>Projects</li>
+          <li>About</li>
           <li>Contact</li>
           <li>Resume</li>
         </ul>
@@ -50,17 +60,10 @@ class Header extends Component {
             srcSet={`${bannerMobile} 640w`}
           />
         </picture>
-        <div className="App_header_content">
-          <Link to="/" className="App_header_content_logo">
-            <div className="App_header_content_logo-icon">
-              <img src={logo} alt="Lotus Logo" />
-            </div>
-
-            <h1 className="App_header_content_logo-title">Lone-DO</h1>
-          </Link>
-          <span className="hamburger" />
+        <section className="App_header_content">
+          {header_content_logo}
           {navBar}
-        </div>
+        </section>
       </header>
     );
   }

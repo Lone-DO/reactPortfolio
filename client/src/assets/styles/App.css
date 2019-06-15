@@ -28,30 +28,57 @@ body {
     margin-top: -8rem; }
     @media (min-width: 640px) {
       .App_header_content {
-        margin-top: -10.2rem; } }
-    .App_header_content_logo {
-      display: -webkit-box;
-      display: flex;
-      -webkit-box-align: center;
-              align-items: center;
-      -webkit-box-pack: center;
-              justify-content: center; }
-      .App_header_content_logo-title {
-        margin: 0;
-        color: white;
-        font-family: "FerroRosso";
-        padding-left: 0.2rem; }
+        margin-top: -4.6rem; } }
+    @media (min-width: 1200px) {
+      .App_header_content {
+        margin-top: -4.2rem; } }
+    @media (min-width: 640px) {
+      .App_header_content > .App_header_content_logo {
+        display: none; } }
+  .App_header_content_logo {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+            justify-content: center; }
+    .App_header_content_logo-title {
+      margin: 0;
+      color: white;
+      font-family: "FerroRosso";
+      padding-left: 0.3rem; }
   .App_header_nav {
     display: none;
-    background-color: rgba(0, 0, 0, 0.3); }
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 0 1rem; }
     @media (min-width: 640px) {
       .App_header_nav {
-        display: block; } }
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-pack: justify;
+                justify-content: space-between; } }
+    .App_header_nav > div {
+      display: -webkit-box;
+      display: flex; }
+      .App_header_nav > div .App_header_content_logo-icon {
+        display: -webkit-box;
+        display: flex;
+        width: 3rem; }
+      .App_header_nav > div .App_header_content_logo-title {
+        font-size: 3rem; }
+      .App_header_nav > div .App_header_content_logo img {
+        width: 100%;
+        height: 100%; }
     .App_header_nav ul {
-      float: right;
-      margin-right: 1rem; }
+      float: right; }
       .App_header_nav ul li {
-        margin-right: 10px; }
+        margin-right: 10px;
+        cursor: pointer; }
+        .App_header_nav ul li:hover {
+          text-shadow: 5px 5px 3px #fc674d; }
+        @media (min-width: 800px) {
+          .App_header_nav ul li {
+            font-size: 1.5rem; } }
       .App_header_nav ul li:last-child {
         margin-right: 0; }
   .App_header-banner, .App_header_content {
