@@ -47,7 +47,7 @@ class ACTunes extends Component {
   render() {
     return (
       <div className="ACTunes_body" key="ACTunes">
-        {/* <Header /> */}
+        <Header />
         {this.renderContent()}
       </div>
     );
