@@ -27,11 +27,11 @@ class Header extends Component {
       <nav className="App_header_nav">
         {header_content_logo}
 
-        <ul>
-          <li>Projects</li>
-          <li>About</li>
-          <li>Contact</li>
-          <li>Resume</li>
+        <ul className="App_header_nav-links">
+          <li id="about-link">About</li>
+          <li id="project-link">Projects</li>
+          <li id="resume-link">Resume</li>
+          <button>Contact Me</button>
         </ul>
       </nav>
     );

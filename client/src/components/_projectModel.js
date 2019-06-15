@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 const ProjectModel = props => {
   return (
-    <section key={props.title} className={`App-${props.title}`}>
-      <h3>{props.name}</h3>
+    <section key={props.title} className={`App_${props.title} `}>
+      <h3 className="_title">{props.name}</h3>
       <p>{props.headline}</p>
       <i>{props.description}</i>
 

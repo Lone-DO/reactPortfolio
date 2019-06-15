@@ -31,7 +31,7 @@ class Projects extends Component {
     });
 
     return (
-      <div className="App-projects">
+      <div className="App_contents_projects" data-matching-link="#project-link">
         <p>List of personal applications</p>
         {Applications}
       </div>
