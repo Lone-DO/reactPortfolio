@@ -1,0 +1,14 @@
+@import "modules/projects";
+.App_contents {
+  font-family: $Roboto;
+
+  width: 100%;
+  background-color: rgba($ghostBlue, 0.5);
+  padding: 1rem 0;
+
+  @media #{$atMedium} {
+    width: 80%;
+    margin: auto;
+    background-color: rgba($ghostBlue, 0.5);
+  }
+}
