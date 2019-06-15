@@ -25,7 +25,7 @@ class Header extends Component {
 
     const navBar = (
       <nav className="App_header_nav">
-        <div>{header_content_logo}</div>
+        {header_content_logo}
 
         <ul>
           <li>Projects</li>
