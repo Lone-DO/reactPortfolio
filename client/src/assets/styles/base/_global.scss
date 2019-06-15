@@ -8,11 +8,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  background-color: $primaryBlue;
   color: white;
+  background-color: $primaryBlue;
 
+  transition: font-size 0.2s ease-in-out;
   font-size: 1.2rem;
-
   @media #{$atSmall} {
     font-size: 1.5rem;
   }

@@ -1,0 +1,10 @@
+.App_content_projects {
+  @media #{$atMedium} {
+    margin: 0 2rem;
+  }
+  &-description {
+    @media #{$atMedium} {
+      text-align: justify;
+    }
+  }
+}

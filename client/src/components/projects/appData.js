@@ -2,17 +2,6 @@ const appData = [
   {
     id: 1,
     type: "app",
-    title: "UndertaleApp",
-    name: "Undertale",
-    headline: "First project, built using Ember.js",
-    description:
-      "Recreational Project that restructures the original Site to a more update formality. Built using Ember, my first project I've built as a Developer. Complete overhaul of hands-on coding and features that utilize API information for the user's discretion. Allows fans to post 'Mail' on the site for the Undertale Devs to see, and others to respond to. Built with Ember.js, Backend localStorage.",
-    launch: "/undertale",
-    modules: ["SASS", "jQuery", "ES2015", "Ember.js", "localStorage"]
-  },
-  {
-    id: 2,
-    type: "app",
     title: "ACTunesApp",
     name: "Animal Crossing Tunes",
     headline: "Second Project, built using EmberCLI & MongoDB",
@@ -28,6 +17,17 @@ const appData = [
       "Ember.js",
       "Node.js"
     ]
+  },
+  {
+    id: 2,
+    type: ".url",
+    title: "UndertaleApp",
+    name: "Undertale",
+    headline: "First project, built using Ember.js",
+    description:
+      "Recreational Project that restructures the original Site to a more update formality. Built using Ember, my first project I've built as a Developer. Complete overhaul of hands-on coding and features that utilize API information for the user's discretion. Allows fans to post 'Mail' on the site for the Undertale Devs to see, and others to respond to. Built with Ember.js, Backend localStorage.",
+    launch: "https://lone-do.github.io/#/undertale/",
+    modules: ["SASS", "jQuery", "ES2015", "Ember.js", "localStorage"]
   },
   {
     id: 3,
