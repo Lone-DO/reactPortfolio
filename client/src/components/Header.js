@@ -42,7 +42,7 @@ class Header extends Component {
           <source
             srcSet={`${bannerLarge} 1920w,
             ${bannerLargeHD} 3840w`}
-            media="(min-width: 1380px)"
+            media="(min-width: 1200px)"
           />
           <source
             srcSet={`${bannerMedium} 1380w,
@@ -52,7 +52,7 @@ class Header extends Component {
           <source
             srcSet={`${bannerSmall} 800w,
              ${bannerSmallHD} 1980w`}
-            media="(min-width: 640px)"
+            media="(min-width: 600px)"
           />
           <img
             className="App_header-banner"

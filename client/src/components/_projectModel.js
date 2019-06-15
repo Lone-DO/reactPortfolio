@@ -3,10 +3,13 @@ import { Link } from "react-router-dom";
 
 const ProjectModel = props => {
   return (
-    <section key={props.title} className={`App_${props.title} `}>
+    <section
+      key={props.title}
+      className={`App_content_projects_${props.title} `}
+    >
       <h3 className="_title">{props.name}</h3>
-      <p>{props.headline}</p>
-      <i>{props.description}</i>
+      <p className="App_content_projects-headline">{props.headline}</p>
+      <p className="App_content_projects-description">{props.description}</p>
 
       {props.type === "app" ? (
         <Link to={props.launch}>

@@ -6,7 +6,7 @@ import Contact from "./Contact";
 
 const Landing = () => {
   return (
-    <main className="App_contents">
+    <main className="App_content">
       <About />
       <Projects />
       <Contact />

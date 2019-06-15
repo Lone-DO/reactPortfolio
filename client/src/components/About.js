@@ -2,7 +2,7 @@ import React from "react";
 
 const About = () => {
   return (
-    <article className="App_contents_about" data-matching-link="about-link">
+    <article className="App_content_about" data-matching-link="about-link">
       <p>Hello from the hidden corners of the internet.</p>
       <p>My name is Dayshawn, Code Name: Lone</p>
       <p>
