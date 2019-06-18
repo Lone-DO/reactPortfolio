@@ -40,3 +40,21 @@ body {
     font-size: 3rem;
   }
 }
+
+.--transparent {
+  background-color: rgba($ghostBlue, 0.4);
+}
+
+.btn {
+  margin-right: 0.5rem;
+
+  @media #{$atSmall} {
+    font-size: 1.25rem;
+  }
+  @media #{$atMedium} {
+    font-size: 1.5rem;
+  }
+  @media #{$atLarge} {
+    font-size: 1.75rem;
+  }
+}

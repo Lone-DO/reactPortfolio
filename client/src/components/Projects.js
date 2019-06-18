@@ -25,6 +25,8 @@ class Projects extends Component {
           headline={app.headline}
           description={app.description}
           launch={app.launch}
+          github={app.github}
+          modules={app.modules}
           type={app.type}
         />
       );
