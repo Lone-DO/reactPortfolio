@@ -2,6 +2,7 @@
   background-color: $primaryBlue;
 
   header img {
+    margin-top: 1rem;
     width: 20rem;
   }
   .weatherIcon {
@@ -32,10 +33,20 @@
     }
   }
 
+  #player {
+    background: whitesmoke;
+    width: 25rem;
+    margin: 0;
+  }
+
   #weatherForm {
     input {
       color: white;
       background-color: rgba(255, 255, 255, 0.1);
+      width: 20rem;
+      text-align: center;
+      display: block;
+      margin: auto;
     }
   }
 }

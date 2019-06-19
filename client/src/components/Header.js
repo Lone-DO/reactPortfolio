@@ -31,7 +31,7 @@ class Header extends Component {
           <li id="about-link">About</li>
           <li id="project-link">Projects</li>
           <li id="resume-link">Resume</li>
-          <button>Contact Me</button>
+          <button className="btn --transparent">Contact Me</button>
         </ul>
       </nav>
     );

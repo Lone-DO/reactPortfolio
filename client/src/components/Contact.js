@@ -5,7 +5,7 @@ const Contact = () => {
     //
     <article className="App_content_contact">
       <h3 className="_title">Contact details...</h3>
-      <button>Contact</button>
+      <button className="btn --transparent">Contact</button>
       <address>
         Email: <a href="mailto:lotussythe@gmail.com">lotussythe@gmail.com</a>
         <br />

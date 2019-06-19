@@ -46,6 +46,7 @@ body {
   background-color: rgba(36, 93, 102, 0.4); }
 
 .btn {
+  cursor: pointer;
   margin-right: 0.5rem; }
   @media (min-width: 600px) {
     .btn {
@@ -58,11 +59,9 @@ body {
       font-size: 1.75rem; } }
 
 .App {
-  height: 100%;
   background: -webkit-gradient(linear, left top, left bottom, from(#19424a), to(#0e3136));
   background: -webkit-linear-gradient(top, #19424a 0%, #0e3136 100%);
-  background: linear-gradient(180deg, #19424a 0%, #0e3136 100%);
-  background-size: 10%; }
+  background: linear-gradient(180deg, #19424a 0%, #0e3136 100%); }
   @media (min-width: 800px) {
     .App {
       background: url("../images/texturedBG4.png"), -webkit-gradient(linear, left top, left bottom, from(#19424a), to(#0e3136));
@@ -181,6 +180,7 @@ body {
 .ACTunes_body {
   background-color: #19424a; }
   .ACTunes_body header img {
+    margin-top: 1rem;
     width: 20rem; }
   .ACTunes_body .weatherIcon {
     background-color: ghostwhite;
@@ -203,6 +203,14 @@ body {
       font-size: 3.5rem;
       -webkit-transform: rotate(24deg);
               transform: rotate(24deg); }
+  .ACTunes_body #player {
+    background: whitesmoke;
+    width: 25rem;
+    margin: 0; }
   .ACTunes_body #weatherForm input {
     color: white;
-    background-color: rgba(255, 255, 255, 0.1); }
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 20rem;
+    text-align: center;
+    display: block;
+    margin: auto; }

@@ -1,11 +1,10 @@
 .App {
-  height: 100%;
   background: linear-gradient(
     180deg,
     rgba($primaryBlue, 1) 0%,
     rgba($darkBlue, 1) 100%
   );
-  background-size: 10%;
+
   @media #{$atMedium} {
     background: url("../images/texturedBG4.png"),
       linear-gradient(180deg, rgba($primaryBlue, 1) 0%, rgba($darkBlue, 1) 100%);

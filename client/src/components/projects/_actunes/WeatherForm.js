@@ -11,7 +11,7 @@ const WeatherForm = ({ props, handleChange, loadWeather }) => {
         placeholder="Location"
         required
       />
-      <button>Update City</button>
+      <button className="btn">Update City</button>
     </form>
   );
 };
