@@ -10,16 +10,14 @@ import AlbumNew from "./projects/_actunes/albums/AlbumNew";
 import Footer from "./Footer";
 
 const App = () => {
-  var env = process.env.PUBLIC_URL;
-  console.log(`${env}/actunes`);
   return (
     <div className="App">
       <div className="App-body">
-        <Route path={`${env}/`} exact component={Header} />
-        <Route path={`${env}/`} exact component={Landing} />
-        <Route path={`${env}/`} exact component={Footer} />
-        <Route path={`${env}/actunes`} exact component={ACTunesApp} />
-        <Route path={`${env}/actunes/new`} component={AlbumNew} />
+        <Route path={`/`} component={Header} />
+        <Route path={`/`} component={Landing} />
+        <Route path={`/`} component={Footer} />
+        <Route path={`/actunes`} exact component={ACTunesApp} />
+        <Route path={`/actunes/new`} component={AlbumNew} />
       </div>
     </div>
   );

@@ -13,10 +13,16 @@ const Player = ({ props, state, loadSong, loadWeather, handleChange }) => {
     } else {
       time = props.time.hours + "00";
     }
-
+    let location = String;
+    if (state.location !== "") {
+      location = `, ${state.location}`;
+    }
     return [
       <div className="clock" key="time">
-        <img src={`/images/AC_App/Timeline/(${time}).png`} alt="Clock" />
+        <img
+          src={`${process.env.PUBLIC_URL}/images/AC_App/Timeline/(${time}).png`}
+          alt="Clock"
+        />
         <div className="clock_time">
           <i>{props.time.hours}</i>
           <i>:{props.time.minutes}</i>
@@ -50,40 +56,50 @@ const Player = ({ props, state, loadSong, loadWeather, handleChange }) => {
       </div>,
       <h4 key="Song Title">
         {state.setAlbum}, {state.title}, {state.weather}
+        {location}
       </h4>,
-      <audio controls loop autoPlay id="player" key="player">
+      <audio controls loop autoPlay id="player" key="player" className="btn">
         <source src={state.song} type="audio/mp3" className="audioSource" />
         Your browser does not support the audio element.
       </audio>,
       <div key="songDials" className="timeline">
-        <button className="timeline-item" onClick={() => loadSong("Original")}>
+        <button
+          className="btn timeline-item"
+          onClick={() => loadSong("Original")}
+        >
           Orignal
         </button>
-        <button className="timeline-item" onClick={() => loadSong("CityFolk")}>
+        <button
+          className="btn timeline-item"
+          onClick={() => loadSong("CityFolk")}
+        >
           City Folk
         </button>
-        <button className="timeline-item" onClick={() => loadSong("NewLeaf")}>
+        <button
+          className="btn timeline-item"
+          onClick={() => loadSong("NewLeaf")}
+        >
           NewLeaf
         </button>
       </div>,
       <div>
         <img
           onClick={() => loadSong(state.setAlbum, "Raining")}
-          className="weatherIcon"
+          className="btn weatherIcon"
           alt="Change Weather to Rain Theme"
           src={raining}
         />
 
         <img
           onClick={() => loadSong(state.setAlbum, "Winter")}
-          className="weatherIcon"
+          className="btn weatherIcon"
           alt="Change Weather to Winter Theme"
           src={winter}
         />
 
         <img
           onClick={() => loadSong(state.setAlbum, "Normal")}
-          className="weatherIcon"
+          className="btn weatherIcon"
           alt="Change Weather to Normal Theme"
           src={sunny}
         />
@@ -97,7 +113,11 @@ const Player = ({ props, state, loadSong, loadWeather, handleChange }) => {
       />
     ];
   } else {
-    return <button onClick={() => loadSong()}>Start</button>;
+    return (
+      <button className="btn" onClick={() => loadSong()}>
+        Start
+      </button>
+    );
   }
 };
 
