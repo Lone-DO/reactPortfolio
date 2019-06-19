@@ -20,14 +20,17 @@
     "gulp": "gulp",
     "start-react": "react-scripts start",
     "build-react": "react-scripts build",
-    "build-css": "node-sass-chokidar src/ -o src/",
+    "build-css": "gulp sass",
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "reactportfolio"
   },
+  "homepage": "http://lone-do.github.io/reactPortfolio",
   "browserslist": {
     "production": [
       ">0.2%",

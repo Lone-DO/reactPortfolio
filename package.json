@@ -1,7 +1,7 @@
 {
   "name": "reactportfolio",
   "version": "1.0.0",
-  "description": "Remastered version of 2016 portfolio",
+  "description": "Remastered version of 2017 portfolio",
   "main": "index.js",
   "engines": {
     "node": "8.1.1",
@@ -32,7 +32,7 @@
     "path-parser": "^2.0.2"
   },
   "bugs": {
-    "url": "https://github.com/Lone-DO/lone-do/issues"
+    "url": "https://github.com/Lone-DO/reactPortfolio/issues"
   },
-  "homepage": "https://github.com/Lone-DO/lone-do#readme"
+  "homepage": "https://github.com/Lone-DO/reactPortfolio#readme"
 }
