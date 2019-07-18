@@ -48,6 +48,8 @@ body {
 .btn {
   cursor: pointer;
   margin-right: 0.5rem; }
+  .btn:hover {
+    background-color: #724d4b; }
   @media (min-width: 600px) {
     .btn {
       font-size: 1.25rem; } }

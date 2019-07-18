@@ -83,7 +83,7 @@ class Audio extends Component {
 
     try {
       let { weatherKey, location, unit } = this.state;
-      let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${location}&units=${unit}&appid=${weatherKey}`;
+      let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=${unit}&appid=${weatherKey}`;
 
       fetch(apiUrl)
         .then(res => res.json())
@@ -92,6 +92,7 @@ class Audio extends Component {
           try {
             let { weatherData, setAlbum } = this.state;
             console.log(weatherData.weather["0"].main);
+            console.log(apiUrl);
             switch (weatherData.weather["0"].main) {
               case "Rain":
               case "Thunderstorm":
