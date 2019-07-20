@@ -64,6 +64,9 @@ body {
   padding: 2rem;
   border: double; }
 
+.--wide {
+  width: 80%; }
+
 .App {
   background: -webkit-gradient(linear, left top, left bottom, from(#19424a), to(#0e3136));
   background: -webkit-linear-gradient(top, #19424a 0%, #0e3136 100%);
@@ -197,12 +200,14 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
+  padding-top: 3rem;
   z-index: 5;
   width: 100%;
   max-height: 100%;
-  color: #724d4b;
-  background-color: rgba(255, 255, 255, 0.95); }
+  color: #6fa0a8;
+  background-color: rgba(25, 66, 74, 0.95); }
   .modal__close {
+    z-index: 99;
     position: absolute;
     font-size: 2rem;
     top: 1rem;
@@ -215,6 +220,10 @@ body {
     color: #fc674d; }
     .modal__close:hover {
       color: #19424a; }
+  .modal .ACTunes_body {
+    position: absolute;
+    top: 0;
+    width: 100%; }
 
 .ACTunes_body {
   background-color: #19424a; }
