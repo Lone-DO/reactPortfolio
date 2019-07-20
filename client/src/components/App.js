@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { Route } from "react-router-dom";
 
 import "../assets/styles/App.css";
@@ -9,18 +9,62 @@ import ACTunesApp from "./projects/_actunes/index";
 import AlbumNew from "./projects/_actunes/albums/AlbumNew";
 import Footer from "./Footer";
 
-const App = () => {
-  return (
-    <div className="App">
-      <div className="App-body">
-        <Route path={`/`} component={Header} />
-        <Route path={`/`} component={Landing} />
-        <Route path={`/`} component={Footer} />
-        <Route path={`/actunes`} exact component={ACTunesApp} />
-        <Route path={`/actunes/new`} component={AlbumNew} />
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      modal: []
+    };
+
+    this.toggleModal = this.toggleModal.bind(this);
+  }
+
+  toggleModal(content = []) {
+    try {
+      const modal = document.querySelector(".modal");
+      this.setState(prevState => {
+        if (content.length === 0) {
+          modal.style.opacity = 0;
+          modal.style.visibility = "hidden";
+        } else {
+          modal.style.opacity = 1;
+          modal.style.visibility = "visible";
+        }
+
+        return { modal: content };
+      });
+    } catch (err) {
+      alert(err);
+    }
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <div className="App-body">
+          <Route
+            path={`/`}
+            exact
+            render={props => <Header modal={this.toggleModal} />}
+          />
+          <Route
+            path={`/`}
+            exact
+            render={props => <Landing modal={this.toggleModal} />}
+          />
+          <Route path={`/`} exact component={Footer} />
+          <div className="modal">
+            <div className="modal__close" onClick={() => this.toggleModal([])}>
+              X
+            </div>
+            {this.state.modal}
+          </div>
+          <Route path={`/actunes`} exact component={ACTunesApp} />
+          <Route path={`/actunes/new`} component={AlbumNew} />
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default App;

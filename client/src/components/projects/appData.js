@@ -1,3 +1,6 @@
+import React from "react";
+import ACTunes from "./_actunes/index.js";
+
 const appData = [
   {
     id: 1,
@@ -7,7 +10,7 @@ const appData = [
     headline: "Second Project, built using EmberCLI & MongoDB",
     description:
       "Creative application that brings the daily soundtracks of Animal Crossing back, and now it's here to stay for our daily endeavors unlike never before. Able to choose smoothly between the user's desired Generation, from the hit classics like, original Animal Crossing from GameCube, to City Folk from the WII U, and the latest New Leaf on the 3DS. Built with the MEEN stack, backend API through Mongodb.",
-    launch: "/actunes",
+    launch: [<ACTunes />],
     github: "https://github.com/Lone-DO/AC-Clock",
     modules: [
       "SASS",

@@ -1,11 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const ProjectModel = props => {
   const modules = props.modules.map(module => {
     return <span key={props.title + module}>{module}</span>;
   });
-
   return (
     <section
       key={props.title}
@@ -16,12 +14,13 @@ const ProjectModel = props => {
       <p className="App_content_projects-description">{props.description}</p>
 
       {props.type === "app" ? (
-        <Link to={props.launch}>
-          <button className="btn --transparent">
-            Launch
-            <i className="material-icons">pageview</i>
-          </button>
-        </Link>
+        <button
+          className="btn --transparent modal-open"
+          onClick={() => props.modal("appShowing", props.launch)}
+        >
+          Launch
+          <i className="material-icons">pageview</i>
+        </button>
       ) : (
         <a href={props.launch}>
           <button className="btn --transparent">

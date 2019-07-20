@@ -4,21 +4,19 @@ import appData from "./projects/appData";
 import ProjectModel from "./_projectModel";
 
 class Projects extends Component {
-  constructor() {
+  constructor(props) {
     super();
     this.state = {
       apps: appData
     };
   }
 
-  componentDidMount() {
-    //
-  }
-
   render() {
+    console.log();
     const Applications = this.state.apps.map(app => {
       return (
         <ProjectModel
+          modal={this.props.modal}
           key={app.title}
           title={app.title}
           name={app.name}
