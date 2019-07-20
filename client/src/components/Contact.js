@@ -2,10 +2,12 @@ import React from "react";
 
 const Contact = () => {
   return (
-    //
     <article className="App_content_contact">
-      <h3 className="_title">Contact details...</h3>
-      <button className="btn --transparent">Contact</button>
+      <h3 className="_title">
+        <i className="material-icons">contact_mail</i> Get in{" "}
+        <strong>Touch</strong>
+      </h3>
+
       <address>
         Email: <a href="mailto:lotussythe@gmail.com">lotussythe@gmail.com</a>
         <br />
