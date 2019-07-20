@@ -16,7 +16,7 @@ const ProjectModel = props => {
       {props.type === "app" ? (
         <button
           className="btn --transparent modal-open"
-          onClick={() => props.modal("appShowing", props.launch)}
+          onClick={() => props.modal(props.launch)}
         >
           Launch
           <i className="material-icons">pageview</i>
