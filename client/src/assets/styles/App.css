@@ -60,6 +60,10 @@ body {
     .btn {
       font-size: 1.75rem; } }
 
+.credits {
+  padding: 2rem;
+  border: double; }
+
 .App {
   background: -webkit-gradient(linear, left top, left bottom, from(#19424a), to(#0e3136));
   background: -webkit-linear-gradient(top, #19424a 0%, #0e3136 100%);
