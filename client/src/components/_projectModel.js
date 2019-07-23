@@ -7,7 +7,7 @@ const ProjectModel = props => {
   return (
     <section
       key={props.title}
-      className={`App_content_projects_${props.title} `}
+      className={`App_content_projects_${props.title}`}
     >
       <h3 className="App_content_projects-title _title">{props.name}</h3>
       <p className="App_content_projects-headline">{props.headline}</p>
@@ -34,10 +34,19 @@ const ProjectModel = props => {
           Github <i className="material-icons">code</i>
         </button>
       </a>
-      <button className="btn --transparent">
+      <button
+        className="btn --transparent"
+        onClick={() =>
+          props.toggle(`.App_content_projects_${props.title}`, "article")
+        }
+      >
         <i className="material-icons">speaker_notes</i>
       </button>
-      <article className="App_content_projects-modules">{modules}</article>
+      <article
+        className={`App_content_projects-modules ${props.title}-modules`}
+      >
+        {modules}
+      </article>
     </section>
   );
 };

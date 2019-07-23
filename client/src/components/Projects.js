@@ -11,6 +11,15 @@ class Projects extends Component {
     };
   }
 
+  toggleElement(_class, _target) {
+    let elem = document.querySelector(`${_class} ${_target}`);
+    if (elem.style.display === "block") {
+      elem.style.display = "none";
+    } else {
+      elem.style.display = "block";
+    }
+  }
+
   render() {
     console.log();
     const Applications = this.state.apps.map(app => {
@@ -26,6 +35,7 @@ class Projects extends Component {
           github={app.github}
           modules={app.modules}
           type={app.type}
+          toggle={this.toggleElement}
         />
       );
     });
