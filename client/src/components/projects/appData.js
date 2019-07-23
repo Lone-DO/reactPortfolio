@@ -13,26 +13,42 @@ const appData = [
     launch: [<ACTunes />],
     github: "https://github.com/Lone-DO/AC-Clock",
     modules: [
-      "SASS",
+      "MEEN Stack",
       "Mongo",
-      "jQuery",
       "Express",
-      "ES2015",
       "Ember.js",
-      "Node.js"
+      "Node.js",
+      "SASS",
+      "jQuery",
+      "HTML5",
+      "CSS3",
+      "JavaScript - ES6"
     ]
   },
   {
     id: 2,
     type: ".url",
-    title: "UndertaleApp",
-    name: "Undertale",
-    headline: "First project, built using Ember.js",
-    description:
-      "Recreational Project that restructures the original Site to a more update formality. Built using Ember, my first project I've built as a Developer. Complete overhaul of hands-on coding and features that utilize API information for the user's discretion. Allows fans to post 'Mail' on the site for the Undertale Devs to see, and others to respond to. Built with Ember.js, Backend localStorage.",
-    launch: "https://lone-do.github.io/#/undertale/",
-    github: "https://github.com/Lone-DO/Undertale-Recreation",
-    modules: ["SASS", "jQuery", "ES2015", "Ember.js", "localStorage"]
+    title: "EmailyApp",
+    name: "Emaily",
+    headline: "Course Project, Built while learning Node & React",
+    description: "",
+    launch: "https://lonedo-emaily.herokuapp.com/",
+    github: "https://github.com/Lone-DO/Emaily",
+    modules: [
+      "Heroku",
+      "HTML5",
+      "CSS3",
+      "JavaScript - ES6",
+      "MongdoDB",
+      "Express",
+      "React",
+      "Redux",
+      "Node.js",
+      "Materialize.css",
+      "Sendgrid",
+      "Stripe",
+      "OAuth"
+    ]
   },
   {
     id: 3,
@@ -43,18 +59,50 @@ const appData = [
     description: "",
     launch: "https://lone-do.github.io/travel-site",
     github: "https://github.com/Lone-DO/travel-site",
-    modules: ["SASS", "jQuery", "ES2015", "Ember.js", "localStorage"]
+    certificate: "https://www.udemy.com/certificate/UC-MRA7ABA8/",
+    modules: [
+      "HTML5",
+      "CSS3",
+      "JavaScript - ES6",
+      "Gulp",
+      "PostCSS",
+      "jQUery",
+      "Normalize.CSS"
+    ]
   },
+
   {
     id: 4,
     type: ".url",
-    title: "EmailyApp",
-    name: "Emaily",
-    headline: "Course Project, Built while learning Node & React",
-    description: "",
-    launch: "https://lonedo-emaily.herokuapp.com/",
-    github: "https://github.com/Lone-DO/Emaily",
-    modules: ["SASS", "jQuery", "ES2015", "Ember.js", "localStorage"]
+    title: "CSharp",
+    name: "C# Shorts",
+    headline: "Projects built while studying C# via Treehouse",
+    description:
+      "My small projects, short and sweet using node & C#. After going a year with JavaScript, picking up this language felt natural for what exposure i managed to dabble into.",
+    launch:
+      "https://github.com/Lone-DO/Treehouse/raw/master/C%23/FitnessFrog/App.exe",
+    github: "https://github.com/Lone-DO/Treehouse/tree/master/C%23",
+    modules: ["Node.js", "C#", ".Net"]
+  },
+  {
+    id: 5,
+    type: ".url",
+    title: "UndertaleApp",
+    name: "Undertale",
+    headline: "First project, built using Ember.js",
+    description:
+      "Recreational Project that restructures the original Site to a more update formality. Built using Ember, my first project I've built as a Developer. Complete overhaul of hands-on coding and features that utilize API information for the user's discretion. Allows fans to post 'Mail' on the site for the Undertale Devs to see, and others to respond to. Built with Ember.js, Backend localStorage.",
+    launch: "https://lone-do.github.io/#/undertale/",
+    github: "https://github.com/Lone-DO/Undertale-Recreation",
+    modules: [
+      "HTML5",
+      "CSS3",
+      "JavaScript - ES6",
+      "Ember.js",
+      "localStorage",
+      "SASS",
+      "jQuery"
+    ]
   }
 ];
 
