@@ -148,28 +148,27 @@ body {
   max-height: 30vmax;
   z-index: 1; }
 
-@media (min-width: 800px) {
-  .App_content_projects {
-    margin: 0 2rem; } }
-
-.App_content_projects-title {
-  margin: 1rem 0 !important; }
-
-@media (min-width: 800px) {
-  .App_content_projects-description {
-    text-align: justify; } }
-
-.App_content_projects-modules {
-  margin: 1rem auto 0;
-  border: 2px solid rgba(0, 0, 0, 0.125);
-  width: 80%;
-  display: none;
-  font-size: 1rem; }
-  .App_content_projects-modules span {
-    display: inline-block;
-    padding-right: 0.3rem; }
-    .App_content_projects-modules span:last-child {
-      padding-right: 0; }
+.App_content_projects {
+  margin-bottom: 2rem; }
+  @media (min-width: 800px) {
+    .App_content_projects {
+      margin: 0 5rem; } }
+  .App_content_projects-title {
+    margin: 1rem 0 !important; }
+  @media (min-width: 800px) {
+    .App_content_projects-description {
+      text-align: justify; } }
+  .App_content_projects-modules {
+    margin: 1rem auto 0;
+    border: 2px solid rgba(0, 0, 0, 0.125);
+    width: 80%;
+    display: none;
+    font-size: 1rem; }
+    .App_content_projects-modules span {
+      display: inline-block;
+      padding-right: 0.3rem; }
+      .App_content_projects-modules span:last-child {
+        padding-right: 0; }
 
 .App_content {
   font-family: "Roboto", sans-serif;

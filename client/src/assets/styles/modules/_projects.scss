@@ -1,6 +1,7 @@
 .App_content_projects {
+  margin-bottom: 2rem;
   @media #{$atMedium} {
-    margin: 0 2rem;
+    margin: 0 5rem;
   }
   &-title {
     margin: 1rem 0 !important;
