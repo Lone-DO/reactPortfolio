@@ -27,9 +27,9 @@ const Header = props => {
       {header_content_logo}
 
       <ul className="App_header_nav-links">
-        <li id="about-link">About</li>
+        {/* <li id="about-link">About</li>
         <li id="project-link">Projects</li>
-        <li id="resume-link">Resume</li>
+        <li id="resume-link">Resume</li> */}
         <button
           className="btn --transparent open-modal"
           onClick={() => props.modal(<Contact />)}
