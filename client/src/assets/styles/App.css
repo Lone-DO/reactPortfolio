@@ -2,6 +2,9 @@
   font-family: "FerroRosso";
   src: url("../fonts/FerroRosso.ttf"); }
 
+* {
+  list-style: none; }
+
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -256,3 +259,11 @@ body {
     text-align: center;
     display: block;
     margin: auto; }
+  .ACTunes_body #weatherForm .btn {
+    margin-top: 1rem; }
+  .ACTunes_body .geo {
+    color: black;
+    padding: 0; }
+  .ACTunes_body footer,
+  .ACTunes_body .timeline {
+    margin-top: 1rem; }

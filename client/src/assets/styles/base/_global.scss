@@ -3,6 +3,10 @@
   src: url("../fonts/FerroRosso.ttf");
 }
 
+* {
+  list-style: none;
+}
+
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
