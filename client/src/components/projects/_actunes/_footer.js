@@ -43,7 +43,7 @@ class Footer extends Component {
         onClick={() => this.toggleDisplay("listShowing")}
         className="btn cancel-button"
       >
-        ^
+        <i className="material-icons">eject</i>
       </button>
     ) : (
       <button
@@ -56,7 +56,7 @@ class Footer extends Component {
           )
         }
       >
-        Generations
+        Downloads
       </button>
     );
 
@@ -66,7 +66,7 @@ class Footer extends Component {
         onClick={() => this.toggleDisplay("infoShowing")}
         className="btn cancel-button"
       >
-        ^
+        <i className="material-icons">eject</i>
       </button>
     ) : (
       <button
@@ -86,8 +86,8 @@ class Footer extends Component {
     return (
       <footer>
         <div id="time" />
-        {listBtn}
         {infoBtn}
+        {listBtn}
         {this.state.display}
       </footer>
     );

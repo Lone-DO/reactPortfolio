@@ -12,6 +12,7 @@ class Audio extends Component {
       weatherKey: "c818f18fb44cfccea6436940f6cea5f8",
       setAlbum: "",
       location: "",
+      cords: {},
       prevHour: "",
       unit: "metric",
       song: "",
@@ -19,6 +20,7 @@ class Audio extends Component {
     };
     this.loadSong = this.loadSong.bind(this);
     this.loadWeather = this.loadWeather.bind(this);
+    this.loadGeolocation = this.loadGeolocation.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -78,21 +80,33 @@ class Audio extends Component {
     this.setState({ [name]: value });
   }
 
-  loadWeather(event) {
-    event.preventDefault();
-
+  loadWeather(event, type) {
     try {
-      let { weatherKey, location, unit } = this.state;
-      let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=${unit}&appid=${weatherKey}`;
+      let { weatherKey, location, cords, unit } = this.state;
+      let { lat, lon } = cords;
+      let apiUrl = "";
 
+      let checkSpam = () => {
+        this.setState(prevState => {
+          console.log(prevState.location, location);
+        });
+        // to be configured later...
+        return true;
+      };
+
+      if (type === "search" && checkSpam()) {
+        event.preventDefault();
+        apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=${unit}&appid=${weatherKey}`;
+      }
+      if (type === "geo" && checkSpam()) {
+        apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${weatherKey}`;
+      }
       fetch(apiUrl)
         .then(res => res.json())
-        .then(res => this.setState({ weatherData: res }))
+        .then(res => this.setState({ weatherData: res, location: res.name }))
         .then(res => {
           try {
             let { weatherData, setAlbum } = this.state;
-            console.log(weatherData.weather["0"].main);
-            console.log(apiUrl);
             switch (weatherData.weather["0"].main) {
               case "Rain":
               case "Thunderstorm":
@@ -109,6 +123,25 @@ class Audio extends Component {
         });
     } catch (err) {
       alert(err.message);
+    }
+  }
+
+  loadGeolocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        pos => {
+          this.setState({
+            cords: {
+              lat: pos.coords.latitude,
+              lon: pos.coords.longitude
+            }
+          });
+          this.loadWeather(Event, "geo");
+        },
+        rejected => {
+          alert("Location Denied");
+        }
+      );
     }
   }
 
@@ -129,6 +162,7 @@ class Audio extends Component {
               props={this.props}
               state={this.state}
               loadSong={this.loadSong}
+              loadGeolocation={this.loadGeolocation}
               loadWeather={this.loadWeather}
               handleChange={this.handleChange}
             />

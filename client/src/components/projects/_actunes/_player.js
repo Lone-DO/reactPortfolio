@@ -5,7 +5,14 @@ import sunny from "../../../assets/images/AC_App/weather-normal.svg";
 import raining from "../../../assets/images/AC_App/weather-raining.svg";
 import winter from "../../../assets/images/AC_App/weather-winter.svg";
 
-const Player = ({ props, state, loadSong, loadWeather, handleChange }) => {
+const Player = ({
+  props,
+  state,
+  loadSong,
+  loadGeolocation,
+  loadWeather,
+  handleChange
+}) => {
   if (state.hasStarted) {
     let time = props.time.hours + "00";
     if (props.time.period === "PM" && new Date().getHours() > 12) {
@@ -103,6 +110,13 @@ const Player = ({ props, state, loadSong, loadWeather, handleChange }) => {
           alt="Change Weather to Normal Theme"
           src={sunny}
         />
+
+        <button
+          onClick={() => loadGeolocation()}
+          className="btn weatherIcon geo"
+        >
+          <i className="material-icons">location_on</i>
+        </button>
       </div>,
 
       <Search

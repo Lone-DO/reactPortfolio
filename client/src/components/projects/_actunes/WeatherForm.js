@@ -2,7 +2,7 @@ import React from "react";
 
 const WeatherForm = ({ props, handleChange, loadWeather }) => {
   return (
-    <form id="weatherForm" onSubmit={event => loadWeather(event)}>
+    <form id="weatherForm" onSubmit={event => loadWeather(event, "search")}>
       <input
         type="text"
         name="location"
@@ -11,7 +11,7 @@ const WeatherForm = ({ props, handleChange, loadWeather }) => {
         placeholder="Location"
         required
       />
-      <button className="btn">Update City</button>
+      <button className="btn">Check Weather</button>
     </form>
   );
 };

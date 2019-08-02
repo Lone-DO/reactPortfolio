@@ -30,18 +30,23 @@ const List = props => {
       }
     });
   };
+  // eslint-disable-next-line
   const OriginalList = Sort(Original);
+  // eslint-disable-next-line
   const NewLeafList = Sort(NewLeaf);
+  // eslint-disable-next-line
   const CityFolkList = Sort(CityFolk);
   return (
     <ol>
+      <li>NOTICE: COMPONENT IN CONSTRUCTION</li>
+      <i>Will display all songs, with ability to download</i>
       <li>List of Music</li>
       <h3>Animal Crossing</h3>
-      {OriginalList}
+      {/* {OriginalList} */}
       <h3>Animal Crossing: New Leaf</h3>
-      {NewLeafList}
+      {/* {NewLeafList} */}
       <h3>Animal Crossing: City Folk</h3>
-      {CityFolkList}
+      {/* {CityFolkList} */}
     </ol>
   );
 };
