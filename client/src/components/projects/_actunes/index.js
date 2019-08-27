@@ -1,11 +1,14 @@
 import React, { Component } from "react";
-
 import Clock from "./Clock";
 import Header from "./_header";
 import Footer from "./_footer";
 import audioData from "./_audioData";
 
 import loadingGif from "../../../assets/images/loading.gif";
+
+require("es6-promise").polyfill();
+require("isomorphic-fetch");
+// let isomorphic = require("isomorphic-fetch");
 // import Generations from "./generations";
 
 class ACTunes extends Component {
