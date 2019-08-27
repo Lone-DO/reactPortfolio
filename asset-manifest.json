@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/reactPortfolio/static/css/main.9abde6b1.chunk.css",
+    "main.css": "/reactPortfolio/static/css/main.62b98b14.chunk.css",
     "main.js": "/reactPortfolio/static/js/main.dc998ace.chunk.js",
     "main.js.map": "/reactPortfolio/static/js/main.dc998ace.chunk.js.map",
     "runtime~main.js": "/reactPortfolio/static/js/runtime~main.7da5f713.js",
@@ -9,10 +9,10 @@
     "static/js/2.59d6f2d5.chunk.js": "/reactPortfolio/static/js/2.59d6f2d5.chunk.js",
     "static/js/2.59d6f2d5.chunk.js.map": "/reactPortfolio/static/js/2.59d6f2d5.chunk.js.map",
     "index.html": "/reactPortfolio/index.html",
-    "precache-manifest.7b51171bc856977027f945e1bbea4dce.js": "/reactPortfolio/precache-manifest.7b51171bc856977027f945e1bbea4dce.js",
+    "precache-manifest.5e701fcf19541519eb32c1435871b356.js": "/reactPortfolio/precache-manifest.5e701fcf19541519eb32c1435871b356.js",
     "service-worker.js": "/reactPortfolio/service-worker.js",
     "static/css/2.ae9e8b99.chunk.css.map": "/reactPortfolio/static/css/2.ae9e8b99.chunk.css.map",
-    "static/css/main.9abde6b1.chunk.css.map": "/reactPortfolio/static/css/main.9abde6b1.chunk.css.map",
+    "static/css/main.62b98b14.chunk.css.map": "/reactPortfolio/static/css/main.62b98b14.chunk.css.map",
     "static/media/Animal_Crossing_Logo.png": "/reactPortfolio/static/media/Animal_Crossing_Logo.8475561c.png",
     "static/media/Banner--large-HD.jpg": "/reactPortfolio/static/media/Banner--large-HD.6b704624.jpg",
     "static/media/Banner--large.jpg": "/reactPortfolio/static/media/Banner--large.bb763753.jpg",
