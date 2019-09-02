@@ -1,17 +1,44 @@
 #elevator {
   $clear: rgba(0, 0, 0, 0);
   overflow-x: hidden;
-  #buttons {
-    // font-size: 1.6em;
+
+  #panel {
     position: relative;
-    top: -21.6rem;
-    left: 1.6rem;
+    top: 0;
+    z-index: 1;
+    width: 20rem;
+
+    //Size of elevator panel
+    @media #{$atSmall} {
+      width: 30rem;
+    }
+    @media #{$atMedium} {
+      width: 40rem;
+    }
+    @media #{$atLarge} {
+      width: 50rem;
+    }
+  }
+
+  #buttons {
+    position: relative;
     list-style: none;
     z-index: 2;
 
+    //Button Location
+    top: -17rem;
+    left: 1rem;
+    @media #{$atSmall} {
+      top: -25.4rem;
+      left: 2.2rem;
+    }
     @media #{$atMedium} {
-      top: -30rem;
-      left: 3rem;
+      top: -33.5rem;
+      left: 3.3rem;
+    }
+    @media #{$atLarge} {
+      top: -41.9rem;
+      left: 4.4rem;
     }
 
     &,
@@ -22,25 +49,41 @@
     }
 
     input[type="checkbox"] {
-      width: 1.5rem;
-      height: 1.5rem;
-      @media #{$atMedium} {
-        width: 2rem;
-        height: 2rem;
-      }
       opacity: 1;
       pointer-events: initial;
+
+      //Size of elevator buttons
+      width: 1.5rem;
+      height: 1.5rem;
+      @media #{$atSmall} {
+        width: 1.8rem;
+        height: 1.8rem;
+      }
+      @media #{$atMedium} {
+        width: 2.3rem;
+        height: 2.3rem;
+      }
+      @media #{$atLarge} {
+        width: 3rem;
+        height: 3rem;
+      }
     }
+
+    // Elevator buttons
     & > div {
-      margin-bottom: 2rem;
+      margin-bottom: 0.6rem;
+      @media #{$atSmall} {
+        margin-bottom: 1.5rem;
+      }
+      @media #{$atMedium} {
+        margin-bottom: 2.3rem;
+      }
+      @media #{$atLarge} {
+        margin-bottom: 3rem;
+      }
     }
   }
-  #panel {
-    width: 100%;
-    position: relative;
-    top: 0;
-    z-index: 1;
-  }
+
   & > div {
     margin-bottom: -20rem;
   }
