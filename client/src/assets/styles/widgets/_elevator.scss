@@ -1,0 +1,47 @@
+#elevator {
+  $clear: rgba(0, 0, 0, 0);
+  overflow-x: hidden;
+  #buttons {
+    // font-size: 1.6em;
+    position: relative;
+    top: -21.6rem;
+    left: 1.6rem;
+    list-style: none;
+    z-index: 2;
+
+    @media #{$atMedium} {
+      top: -30rem;
+      left: 3rem;
+    }
+
+    &,
+    label {
+      color: $clear;
+      background-color: $clear;
+      user-select: none;
+    }
+
+    input[type="checkbox"] {
+      width: 1.5rem;
+      height: 1.5rem;
+      @media #{$atMedium} {
+        width: 2rem;
+        height: 2rem;
+      }
+      opacity: 1;
+      pointer-events: initial;
+    }
+    & > div {
+      margin-bottom: 2rem;
+    }
+  }
+  #panel {
+    width: 100%;
+    position: relative;
+    top: 0;
+    z-index: 1;
+  }
+  & > div {
+    margin-bottom: -20rem;
+  }
+}

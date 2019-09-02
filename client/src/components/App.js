@@ -54,9 +54,9 @@ class App extends Component {
           />
           <Route path={`/`} exact component={Footer} />
           <div className="modal">
-            <div className="modal__close" onClick={() => this.toggleModal([])}>
+            <span className="modal__close" onClick={() => this.toggleModal([])}>
               X
-            </div>
+            </span>
             {this.state.modal}
           </div>
           <Route path={`/actunes`} exact component={ACTunesApp} />

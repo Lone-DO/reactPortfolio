@@ -1,5 +1,7 @@
 import React from "react";
 import ACTunes from "./_actunes/index.js";
+import Elevator from "../projects/_extra/components/Elevator";
+import Invoice from "../projects/_extra/components/Invoice";
 
 const appData = [
   {
@@ -103,6 +105,32 @@ const appData = [
       "SASS",
       "jQuery"
     ]
+  },
+  {
+    id: 6,
+    type: "app",
+    title: "ElevatorApp",
+    name: "Elevator",
+    headline: "JavaScript Short: Elevator Simulator 2019",
+    description:
+      "JavaScript Short: Created an app that simulates an elevator, testing state management skills",
+    launch: [<Elevator />],
+    github:
+      "https://github.com/Lone-DO/javascript-widgets/blob/master/src/components/Elevator.js",
+    modules: ["JavaScript", "React.js"]
+  },
+  {
+    id: 7,
+    type: "app",
+    title: "InvoiceApp",
+    name: "Invoice Generator",
+    headline: "JavaScript Short: Data Manipulation",
+    description:
+      "JavaScript Short: Sorting generated invoices, testing data manipulation skills.",
+    launch: [<Invoice />],
+    github:
+      "https://github.com/Lone-DO/javascript-widgets/blob/master/src/components/Invoice.js",
+    modules: ["JavaScript", "React.js"]
   }
 ];
 
