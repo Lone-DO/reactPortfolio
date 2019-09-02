@@ -41,7 +41,8 @@ body {
     font-size: 2.75rem;
   }
   @media #{$atLarge} {
-    font-size: 3rem;
+    //Adjust for Flexbox
+    font-size: 2.5rem;
   }
 }
 
@@ -51,10 +52,11 @@ body {
 
 .btn {
   cursor: pointer;
+  margin-right: 0.5rem;
+
   &:hover {
     background-color: $secondaryBrown;
   }
-  margin-right: 0.5rem;
 
   @media #{$atSmall} {
     font-size: 1.25rem;
@@ -63,7 +65,7 @@ body {
     font-size: 1.5rem;
   }
   @media #{$atLarge} {
-    font-size: 1.75rem;
+    // font-size: 1.75rem;
   }
 }
 
