@@ -2,21 +2,32 @@
   $clear: rgba(0, 0, 0, 0);
   overflow-x: hidden;
 
-  #panel {
-    position: relative;
-    top: 0;
-    z-index: 1;
-    width: 20rem;
-
-    //Size of elevator panel
-    @media #{$atSmall} {
-      width: 30rem;
-    }
+  i {
     @media #{$atMedium} {
-      width: 40rem;
+      width: 80%;
+      display: block;
+      margin: auto;
     }
-    @media #{$atLarge} {
-      width: 50rem;
+  }
+
+  #panel {
+    height: 100%;
+    img {
+      position: relative;
+      top: 0;
+      z-index: 1;
+      width: 20rem;
+
+      //Size of elevator panel
+      @media #{$atSmall} {
+        width: 30rem;
+      }
+      @media #{$atMedium} {
+        width: 40rem;
+      }
+      @media #{$atLarge} {
+        width: 50rem;
+      }
     }
   }
 
@@ -82,9 +93,5 @@
         margin-bottom: 3rem;
       }
     }
-  }
-
-  & > div {
-    margin-bottom: -20rem;
   }
 }
