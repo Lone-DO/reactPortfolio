@@ -1,7 +1,7 @@
 import React from "react";
 import ACTunes from "./_actunes/index.js";
 import Elevator from "../projects/_extra/components/Elevator";
-import Invoice from "../projects/_extra/components/Invoice";
+import Invoice from "./_extra/components/invoice";
 
 const appData = [
   {

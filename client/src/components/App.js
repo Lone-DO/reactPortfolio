@@ -52,7 +52,11 @@ class App extends Component {
             exact
             render={props => <Landing modal={this.toggleModal} />}
           />
-          <Route path={`/`} exact component={Footer} />
+          <Route
+            path={`/`}
+            exact
+            render={props => <Footer modal={this.toggleModal} />}
+          />
           <div className="modal">
             <span className="modal__close" onClick={() => this.toggleModal([])}>
               X

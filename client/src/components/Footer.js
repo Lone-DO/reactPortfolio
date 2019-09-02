@@ -1,10 +1,16 @@
 import React from "react";
-
-const Footer = () => {
+import Contact from "./Contact";
+const Footer = props => {
   return (
     //
     <footer className="App_footer">
-      Copyright © 2019 Lone-DO. All rights reserved.
+      Copyright © 2019 Lone-DO. All rights reserved.{" "}
+      <button
+        className="btn --transparent open-modal"
+        onClick={() => props.modal(<Contact />)}
+      >
+        Contact Me
+      </button>
     </footer>
   );
 };
