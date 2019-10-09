@@ -1,6 +1,6 @@
 {
-  "name": "client",
-  "version": "0.1.0",
+  "name": "reactportfolio-client",
+  "version": "1.1.0",
   "private": true,
   "dependencies": {
     "es6-promise": "^4.2.8",

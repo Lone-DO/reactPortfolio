@@ -13,7 +13,7 @@ const appData = [
     description:
       "Creative application that brings the daily soundtracks of Animal Crossing back, and now it's here to stay for our daily endeavors unlike never before. Able to choose smoothly between the user's desired Generation, from the hit classics like, original Animal Crossing from GameCube, to City Folk from the WII U, and the latest New Leaf on the 3DS. Built with the MEEN stack, backend API through Mongodb.",
     launch: [<ACTunes />],
-    github: "https://github.com/Lone-DO/AC-Clock",
+    github: "https://github.com/Lone-DO/animalcrossing",
     modules: [
       "MEEN Stack",
       "Mongo",
