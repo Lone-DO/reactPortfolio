@@ -12,7 +12,6 @@ body {
   text-align: center;
   color: white;
   background-color: #19424a;
-  -webkit-transition: font-size 0.2s ease-in-out;
   transition: font-size 0.2s ease-in-out;
   font-size: 1.2rem; }
   @media (min-width: 600px) {
@@ -62,15 +61,10 @@ body {
   width: 80%; }
 
 .App {
-  background: -webkit-gradient(linear, left top, left bottom, from(#19424a), to(#0e3136));
-  background: -webkit-linear-gradient(top, #19424a 0%, #0e3136 100%);
   background: linear-gradient(180deg, #19424a 0%, #0e3136 100%); }
   @media (min-width: 800px) {
     .App {
-      background: url("../images/texturedBG4.png"), -webkit-gradient(linear, left top, left bottom, from(#19424a), to(#0e3136));
-      background: url("../images/texturedBG4.png"), -webkit-linear-gradient(top, #19424a 0%, #0e3136 100%);
       background: url("../images/texturedBG4.png"), linear-gradient(180deg, #19424a 0%, #0e3136 100%);
-      -webkit-transition: background-size 0.3s ease-in;
       transition: background-size 0.3s ease-in;
       background-size: 100%; } }
 
@@ -94,12 +88,9 @@ body {
       display: none; } }
 
 .App_header_content_logo {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-          justify-content: center; }
+  align-items: center;
+  justify-content: center; }
   .App_header_content_logo-title {
     margin: 0;
     color: white;
@@ -112,12 +103,9 @@ body {
   padding: 0 1rem; }
   @media (min-width: 600px) {
     .App_header_nav {
-      display: -webkit-box;
       display: flex;
-      -webkit-box-pack: justify;
-              justify-content: space-between; } }
+      justify-content: space-between; } }
   .App_header_nav .App_header_content_logo-icon {
-    display: -webkit-box;
     display: flex;
     width: 3rem; }
   .App_header_nav .App_header_content_logo-title {
@@ -150,11 +138,9 @@ body {
   @media (min-width: 1200px) {
     .App_content_projects {
       font-size: 1.48rem;
-      display: -webkit-box;
       display: flex;
       flex-wrap: wrap;
-      -webkit-box-pack: justify;
-              justify-content: space-between; }
+      justify-content: space-between; }
       .App_content_projects p {
         width: 100%; }
       .App_content_projects section {
@@ -184,7 +170,6 @@ body {
   margin: 0 auto;
   width: 95%;
   padding: 1rem 0;
-  -webkit-transition: width 0.3s ease-in-out, font-size 0.3s ease-in-out, background-color 0.3s ease-in-out;
   transition: width 0.3s ease-in-out, font-size 0.3s ease-in-out, background-color 0.3s ease-in-out; }
   @media (min-width: 800px) {
     .App_content {
@@ -202,12 +187,9 @@ body {
 .modal {
   opacity: 0;
   visibility: hidden;
-  display: -webkit-box;
   display: flex;
-  -webkit-box-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   top: 0;
   bottom: 0;
