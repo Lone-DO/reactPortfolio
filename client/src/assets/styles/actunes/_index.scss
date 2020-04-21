@@ -67,4 +67,23 @@
   footer {
     margin-bottom: 3rem;
   }
+
+  .downloads {
+    padding: 0;
+    select {
+      display: block;
+    }
+    form {
+      display: flex;
+    }
+
+    &_album {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    &_title {
+      flex-basis: 100%;
+    }
+  }
 }

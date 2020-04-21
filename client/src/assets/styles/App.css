@@ -267,6 +267,18 @@ body {
     margin-top: 1rem; }
   .ACTunes_body footer {
     margin-bottom: 3rem; }
+  .ACTunes_body .downloads {
+    padding: 0; }
+    .ACTunes_body .downloads select {
+      display: block; }
+    .ACTunes_body .downloads form {
+      display: flex; }
+    .ACTunes_body .downloads_album {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around; }
+    .ACTunes_body .downloads_title {
+      flex-basis: 100%; }
 
 #elevator {
   overflow-x: hidden; }

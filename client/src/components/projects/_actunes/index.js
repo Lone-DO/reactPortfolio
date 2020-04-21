@@ -8,8 +8,6 @@ import loadingGif from "../../../assets/images/loading.gif";
 
 require("es6-promise").polyfill();
 require("isomorphic-fetch");
-// let isomorphic = require("isomorphic-fetch");
-// import Generations from "./generations";
 
 class ACTunes extends Component {
   constructor() {

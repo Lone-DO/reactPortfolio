@@ -34,32 +34,6 @@ const Player = ({
           <i>{props.time.hours}</i>
           <i>:{props.time.minutes}</i>
         </div>
-        {/* <select className="clock_weather" key="weatherDials">
-          <option value="Raining">
-            <img
-              onClick={() => loadSong(state.setAlbum, "Raining")}
-              className="weatherIcon"
-              alt="Change Weather to Rain Theme"
-              src={raining}
-            />
-          </option>
-          <option value="Winter">
-            <img
-              onClick={() => loadSong(state.setAlbum, "Winter")}
-              className="weatherIcon"
-              alt="Change Weather to Winter Theme"
-              src={winter}
-            />
-          </option>
-          <option value="Normal">
-            <img
-              onClick={() => loadSong(state.setAlbum, "Normal")}
-              className="weatherIcon"
-              alt="Change Weather to Normal Theme"
-              src={sunny}
-            />
-          </option>
-        </select> */}
       </div>,
       <h4 key="Song Title">
         {state.setAlbum}, {state.title}, {state.weather}

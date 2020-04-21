@@ -2,51 +2,67 @@ import React from "react";
 
 const List = props => {
   const { Original, NewLeaf, CityFolk } = props.audioData;
-  console.log(Original);
-  console.log(NewLeaf);
-  console.log(CityFolk);
 
-  const Sort = obj => {
-    return Object.keys(obj).map(playlist => {
+  const Display = obj => {
+    let body = [];
+    let children = [];
+    Object.keys(obj).map(playlist => {
       if (
         playlist === "Normal" ||
         playlist === "Raining" ||
         playlist === "Winter" ||
         playlist === "City"
       ) {
-        const songs = Array.from(obj[playlist]);
-        console.log(songs);
-        // songs.map(song => {
-        //   console.log(song);
-        // });
+        for (let song in obj[playlist]) {
+          let link = obj[playlist][song];
+          children.push(
+            <option value={link} key={link}>
+              {song}
+            </option>
+          );
+        }
 
-        return (
-          <li>
-            <div>{playlist}</div>
-          </li>
+        body.push(
+          <div className="downloads_list" key={playlist}>
+            <h5>{playlist}</h5>
+            <form
+              onSubmit={event => {
+                event.preventDefault();
+                return window.open(event.target[0].value);
+              }}
+            >
+              <select name="Downloads">{[...children]}</select>
+              <input type="submit" value="Download"></input>
+            </form>
+          </div>
         );
-      } else {
-        return null;
+        children = [];
       }
+      return body;
     });
+    return body;
   };
   // eslint-disable-next-line
-  const OriginalList = Sort(Original);
+  const OriginalList = Display(Original);
   // eslint-disable-next-line
-  const NewLeafList = Sort(NewLeaf);
+  const NewLeafList = Display(NewLeaf);
   // eslint-disable-next-line
-  const CityFolkList = Sort(CityFolk);
+  const CityFolkList = Display(CityFolk);
   return (
-    <ol>
-      <li>NOTICE: COMPONENT IN CONSTRUCTION</li>
-      <i>Will display all songs, with ability to download</i>
+    <ol className="downloads">
       <li>List of Music</li>
-      <h3>Animal Crossing</h3>
-      {/* {OriginalList} */}
-      <h3>Animal Crossing: New Leaf</h3>
-      {/* {NewLeafList} */}
-      <h3>Animal Crossing: City Folk</h3>
-      {/* {CityFolkList} */}
+      <li className="downloads_album">
+        <h4 className="downloads_title">Animal Crossing</h4>
+        {OriginalList}
+      </li>
+      <li className="downloads_album">
+        <h4 className="downloads_title">Animal Crossing: New Leaf</h4>
+        {NewLeafList}
+      </li>
+      <li className="downloads_album">
+        <h4 className="downloads_title">Animal Crossing: City Folk</h4>
+        {CityFolkList}
+      </li>
     </ol>
   );
 };
