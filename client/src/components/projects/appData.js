@@ -131,6 +131,41 @@ const appData = [
     github:
       "https://github.com/Lone-DO/javascript-widgets/blob/master/src/components/Invoice.js",
     modules: ["JavaScript", "React.js"]
+  },
+  {
+    id: 8,
+    type: ".url",
+    title: "FCC_Tribute",
+    name: "FCC: Tribute Page",
+    headline: "Free Code Camp Project: Tribute Page",
+    description:
+      "First Project for the Responsive Web Design track, build a tribute page, hosted via CodePen",
+    launch: "https://codepen.io/lone-do/full/LemKLM",
+    github: "https://codepen.io/lone-do/pen/LemKLM",
+    modules: ["HTML, CSS, JavaScript"]
+  },
+  {
+    id: 9,
+    type: ".url",
+    title: "FCC_Tribute",
+    name: "FCC: Form Page",
+    headline: "Free Code Camp Project: Form Page",
+    description:
+      "Second Project for the Responsive Web Design track, build a form that simulates user input, hosted via CodePen",
+    launch: "https://codepen.io/lone-do/full/MWaeZVB",
+    github: "https://codepen.io/lone-do/pen/MWaeZVB",
+    modules: ["HTML, CSS, JavaScript"]
+  },
+  {
+    id: 10,
+    type: ".url",
+    title: "Scratch",
+    name: "Scratch Game: Pong",
+    headline: "Harvard CS Introduction: Scratch Assignment",
+    description: "Built Pong using Scratch, short and sweet.",
+    launch: "https://scratch.mit.edu/projects/387488765/",
+    github: "https://scratch.mit.edu/projects/387488765/editor",
+    modules: ["Scratch"]
   }
 ];
 

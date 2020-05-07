@@ -10,8 +10,8 @@ const Intro = () => {
         I'm a technology enthusiast & Software Developer who believes in
         crafting solutions that helps people's business & personal lives easier.
         My skill set is adaptable to what fits your needs and gets the job done.
-        My Code is built with both clean practices & modularity in mind, and
-        with the end-user in mind for responsiveness & accessibility.
+        My Code is built with both clean practices & modularity, and with the
+        end-user in mind for responsiveness & accessibility.
       </p>
 
       <hr></hr>
