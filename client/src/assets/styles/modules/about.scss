@@ -1,0 +1,23 @@
+.App_content_about {
+  text-align: justify;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  @media #{$atMedium} {
+    padding: 0 3rem;
+  }
+
+  h2 {
+    flex-basis: 100%;
+    margin-bottom: 0;
+    @media #{$atMedium} {
+    }
+  }
+
+  i {
+    @media #{$underSmall} {
+      flex-basis: 100%;
+    }
+  }
+}

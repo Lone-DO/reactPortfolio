@@ -21,6 +21,10 @@
     section:last-child {
       margin-bottom: 0;
     }
+
+    .App_content-title {
+      flex-basis: 100%;
+    }
   }
   &-title {
     margin: 1rem 0;

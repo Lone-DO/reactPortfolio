@@ -11,4 +11,15 @@
     margin: auto;
     background-color: rgba($ghostBlue, 0.8);
   }
+
+  &-title {
+    text-align: center;
+    font-size: 2rem;
+    @media #{$atMedium} {
+      font-size: 2.5rem;
+    }
+    @media #{$atLarge} {
+      font-size: 3rem;
+    }
+  }
 }
