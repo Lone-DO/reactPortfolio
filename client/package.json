@@ -49,7 +49,7 @@
     "autoprefixer": "^9.7.6",
     "gulp": "^4.0.2",
     "gulp-postcss": "^8.0.0",
-    "gulp-sass": "^4.0.2",
+    "gulp-sass": "^4.1.0",
     "gulp-watch": "^5.0.1"
   }
 }
