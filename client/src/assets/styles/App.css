@@ -116,13 +116,21 @@ hr {
     padding-left: 0.3rem; }
 
 .App_header_nav {
-  display: none;
-  background-color: rgba(0, 0, 0, 0.3);
-  padding: 0 1rem; }
+  background-color: rgba(0, 0, 0, 0);
+  display: flex;
+  justify-content: space-between; }
+  @media (max-width: 599px) {
+    .App_header_nav {
+      box-shadow: none;
+      justify-content: center;
+      margin-top: 2rem; } }
   @media (min-width: 600px) {
     .App_header_nav {
-      display: flex;
-      justify-content: space-between; } }
+      background-color: rgba(0, 0, 0, 0.3);
+      padding: 0 1rem; } }
+  @media (max-width: 599px) {
+    .App_header_nav .App_header_content_logo {
+      display: none; } }
   .App_header_nav .App_header_content_logo-icon {
     display: flex;
     width: 3rem; }
@@ -147,6 +155,11 @@ hr {
 .App_header-banner, .App_header_content {
   max-height: 30vmax;
   z-index: 1; }
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%; }
 
 .App_content_projects {
   margin-bottom: 2rem; }

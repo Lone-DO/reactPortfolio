@@ -38,16 +38,23 @@
   }
 
   &_nav {
-    display: none;
-    background-color: rgba(0, 0, 0, 0.3);
-    padding: 0 1rem;
-
+    background-color: rgba(0, 0, 0, 0);
+    display: flex;
+    justify-content: space-between;
+    @media #{$underSmall} {
+      box-shadow: none;
+      justify-content: center;
+      margin-top: 2rem;
+    }
     @media #{$atSmall} {
-      display: flex;
-      justify-content: space-between;
+      background-color: rgba(0, 0, 0, 0.3);
+      padding: 0 1rem;
     }
 
     & .App_header_content_logo {
+      @media #{$underSmall} {
+        display: none;
+      }
       &-icon {
         display: flex;
         width: 3rem;
@@ -87,4 +94,10 @@
     max-height: 30vmax;
     z-index: 1;
   }
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }

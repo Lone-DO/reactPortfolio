@@ -13,7 +13,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      modal: []
+      modal: [],
     };
 
     this.toggleModal = this.toggleModal.bind(this);
@@ -22,7 +22,7 @@ class App extends Component {
   toggleModal(content = []) {
     try {
       const modal = document.querySelector(".modal");
-      this.setState(prevState => {
+      this.setState((prevState) => {
         if (content.length === 0) {
           modal.style.opacity = 0;
           modal.style.visibility = "hidden";
@@ -45,17 +45,17 @@ class App extends Component {
           <Route
             path={`/`}
             exact
-            render={props => <Header modal={this.toggleModal} />}
+            render={(props) => <Header modal={this.toggleModal} />}
           />
           <Route
             path={`/`}
             exact
-            render={props => <Landing modal={this.toggleModal} />}
+            render={(props) => <Landing modal={this.toggleModal} />}
           />
           <Route
             path={`/`}
             exact
-            render={props => <Footer modal={this.toggleModal} />}
+            render={(props) => <Footer modal={this.toggleModal} />}
           />
           <div className="modal">
             <span className="modal__close" onClick={() => this.toggleModal([])}>
