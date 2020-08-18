@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "97dbec12b9fd8ae5245c23b3813aab04",
+    "revision": "2662c28f9e419bd886cbcab35503fcc2",
     "url": "/index.html"
   },
   {
-    "revision": "ca4150785b72af3523d7",
+    "revision": "c091b0466a4eb707e149",
     "url": "/static/css/2.a185e9cb.chunk.css"
   },
   {
-    "revision": "1a7ffa220acb94e43a55",
-    "url": "/static/css/main.69e1385c.chunk.css"
+    "revision": "8990ab64589227b061a6",
+    "url": "/static/css/main.03b26f56.chunk.css"
   },
   {
-    "revision": "ca4150785b72af3523d7",
-    "url": "/static/js/2.7e455ae1.chunk.js"
+    "revision": "c091b0466a4eb707e149",
+    "url": "/static/js/2.1188ef59.chunk.js"
   },
   {
     "revision": "59e636ffbe5919ab58129795366a94ef",
-    "url": "/static/js/2.7e455ae1.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.1188ef59.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "1a7ffa220acb94e43a55",
-    "url": "/static/js/main.908b7cd4.chunk.js"
+    "revision": "8990ab64589227b061a6",
+    "url": "/static/js/main.fe17feea.chunk.js"
   },
   {
     "revision": "82828c644ac04062c52d",
@@ -62,6 +62,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "7e678cd8313e46230aaf0c2b209aa596",
     "url": "/static/media/FerroRosso.7e678cd8.ttf"
+  },
+  {
+    "revision": "9853790039b1b63e0d76ece103f6d0e4",
+    "url": "/static/media/elevator-panel.98537900.jpg"
   },
   {
     "revision": "564ec00b262da7659294e01da6fde807",

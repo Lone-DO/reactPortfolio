@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.69e1385c.chunk.css",
-    "main.js": "/static/js/main.908b7cd4.chunk.js",
-    "main.js.map": "/static/js/main.908b7cd4.chunk.js.map",
+    "main.css": "/static/css/main.03b26f56.chunk.css",
+    "main.js": "/static/js/main.fe17feea.chunk.js",
+    "main.js.map": "/static/js/main.fe17feea.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.d6b76af8.js",
     "runtime-main.js.map": "/static/js/runtime-main.d6b76af8.js.map",
     "static/css/2.a185e9cb.chunk.css": "/static/css/2.a185e9cb.chunk.css",
-    "static/js/2.7e455ae1.chunk.js": "/static/js/2.7e455ae1.chunk.js",
-    "static/js/2.7e455ae1.chunk.js.map": "/static/js/2.7e455ae1.chunk.js.map",
+    "static/js/2.1188ef59.chunk.js": "/static/js/2.1188ef59.chunk.js",
+    "static/js/2.1188ef59.chunk.js.map": "/static/js/2.1188ef59.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.d07dc32a84320a829f08565a8a94b558.js": "/precache-manifest.d07dc32a84320a829f08565a8a94b558.js",
+    "precache-manifest.4c3be9b426cb5dafc9dadfa886804036.js": "/precache-manifest.4c3be9b426cb5dafc9dadfa886804036.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.a185e9cb.chunk.css.map": "/static/css/2.a185e9cb.chunk.css.map",
-    "static/css/main.69e1385c.chunk.css.map": "/static/css/main.69e1385c.chunk.css.map",
-    "static/js/2.7e455ae1.chunk.js.LICENSE.txt": "/static/js/2.7e455ae1.chunk.js.LICENSE.txt",
+    "static/css/main.03b26f56.chunk.css.map": "/static/css/main.03b26f56.chunk.css.map",
+    "static/js/2.1188ef59.chunk.js.LICENSE.txt": "/static/js/2.1188ef59.chunk.js.LICENSE.txt",
     "static/media/Animal_Crossing_Logo.png": "/static/media/Animal_Crossing_Logo.8475561c.png",
     "static/media/Banner--large-HD.jpg": "/static/media/Banner--large-HD.6b704624.jpg",
     "static/media/Banner--large.jpg": "/static/media/Banner--large.bb763753.jpg",
@@ -23,6 +23,7 @@
     "static/media/Banner--small-HD.jpg": "/static/media/Banner--small-HD.a712aa81.jpg",
     "static/media/Banner--small.jpg": "/static/media/Banner--small.e7f51364.jpg",
     "static/media/App.css": "/static/media/texturedBG4.70daefe8.png",
+    "static/media/elevator-panel.jpg": "/static/media/elevator-panel.98537900.jpg",
     "static/media/loading.gif": "/static/media/loading.564ec00b.gif",
     "static/media/weather-normal.svg": "/static/media/weather-normal.6839837e.svg",
     "static/media/weather-raining.svg": "/static/media/weather-raining.b7e6dc11.svg",
@@ -31,8 +32,8 @@
   "entrypoints": [
     "static/js/runtime-main.d6b76af8.js",
     "static/css/2.a185e9cb.chunk.css",
-    "static/js/2.7e455ae1.chunk.js",
-    "static/css/main.69e1385c.chunk.css",
-    "static/js/main.908b7cd4.chunk.js"
+    "static/js/2.1188ef59.chunk.js",
+    "static/css/main.03b26f56.chunk.css",
+    "static/js/main.fe17feea.chunk.js"
   ]
 }
