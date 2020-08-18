@@ -183,9 +183,6 @@ hr {
         flex-basis: 100%; } }
   .App_content_projects-title {
     margin: 1rem 0; }
-  @media (min-width: 800px) {
-    .App_content_projects-description {
-      text-align: justify; } }
   .App_content_projects-modules {
     margin: 1rem auto 0;
     border: 2px solid rgba(0, 0, 0, 0.125);
