@@ -1,97 +1,97 @@
 #elevator {
-  $clear: rgba(0, 0, 0, 0);
-  overflow-x: hidden;
+   $clear: rgba(0, 0, 0, 0);
+   overflow-x: hidden;
 
-  i {
-    @media #{$atMedium} {
-      width: 80%;
-      display: block;
-      margin: auto;
-    }
-  }
+   i {
+      @media #{$atMedium} {
+         width: 80%;
+         display: block;
+         margin: auto;
+      }
+   }
 
-  #panel {
-    height: 100%;
-    img {
+   #panel {
+      height: 100%;
+      img {
+         position: relative;
+         top: 0;
+         z-index: 1;
+         width: 20rem;
+
+         //Size of elevator panel
+         @media #{$atSmall} {
+            width: 25rem;
+         }
+         @media #{$atMedium} {
+            width: 30rem;
+         }
+         @media #{$atLarge} {
+            width: 32rem;
+         }
+      }
+   }
+
+   #buttons {
       position: relative;
-      top: 0;
-      z-index: 1;
-      width: 20rem;
+      list-style: none;
+      z-index: 2;
 
-      //Size of elevator panel
+      //Button Location
+      top: -28.2rem;
+      left: 2.5rem;
       @media #{$atSmall} {
-        width: 30rem;
+         top: -35.4rem;
+         left: 3.2rem;
       }
       @media #{$atMedium} {
-        width: 40rem;
+         top: -42.5rem;
+         left: 4.3rem;
       }
       @media #{$atLarge} {
-        width: 50rem;
+         top: -45.5rem;
+         left: 4.4rem;
       }
-    }
-  }
 
-  #buttons {
-    position: relative;
-    list-style: none;
-    z-index: 2;
+      &,
+      label {
+         color: $clear;
+         background-color: $clear;
+         user-select: none;
+      }
 
-    //Button Location
-    top: -17rem;
-    left: 1rem;
-    @media #{$atSmall} {
-      top: -25.4rem;
-      left: 2.2rem;
-    }
-    @media #{$atMedium} {
-      top: -33.5rem;
-      left: 3.3rem;
-    }
-    @media #{$atLarge} {
-      top: -41.9rem;
-      left: 4.4rem;
-    }
+      input[type="checkbox"] {
+         opacity: 1;
+         pointer-events: initial;
 
-    &,
-    label {
-      color: $clear;
-      background-color: $clear;
-      user-select: none;
-    }
+         //Size of elevator buttons
+         width: 2rem;
+         height: 2rem;
+         @media #{$atSmall} {
+            width: 2.5rem;
+            height: 2.5rem;
+         }
+         @media #{$atMedium} {
+            width: 3rem;
+            height: 3rem;
+         }
+         @media #{$atLarge} {
+            width: 3.5rem;
+            height: 3.5rem;
+         }
+      }
 
-    input[type="checkbox"] {
-      opacity: 1;
-      pointer-events: initial;
-
-      //Size of elevator buttons
-      width: 1.5rem;
-      height: 1.5rem;
-      @media #{$atSmall} {
-        width: 1.8rem;
-        height: 1.8rem;
+      // Elevator buttons
+      & > div {
+         margin-bottom: 2.3rem;
+         @media #{$atSmall} {
+            margin-bottom: 3rem;
+         }
+         @media #{$atMedium} {
+            margin-bottom: 3.5rem;
+         }
+         @media #{$atLarge} {
+            margin-bottom: 3.6rem;
+         }
       }
-      @media #{$atMedium} {
-        width: 2.3rem;
-        height: 2.3rem;
-      }
-      @media #{$atLarge} {
-        width: 3rem;
-        height: 3rem;
-      }
-    }
-
-    // Elevator buttons
-    & > div {
-      margin-bottom: 0.6rem;
-      @media #{$atSmall} {
-        margin-bottom: 1.5rem;
-      }
-      @media #{$atMedium} {
-        margin-bottom: 2.3rem;
-      }
-      @media #{$atLarge} {
-        margin-bottom: 3rem;
-      }
-    }
-  }
+   }
 }
